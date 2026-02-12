@@ -118,13 +118,9 @@ wrds_set_credentials <- function(user_key = "wrds_user",
     cli::cli_abort("Username cannot be empty.")
   }
 
-  password <- readline("WRDS password: ")
-  if (nchar(password) == 0) {
-    cli::cli_abort("Password cannot be empty.")
-  }
-
   keyring::key_set_with_value(user_key, password = user, keyring = keyring)
-  keyring::key_set_with_value(password_key, password = password, keyring = keyring)
+  # This does not allow empty passwords
+  keyring::key_set(password_key, keyring = keyring, prompt = "WRDS password: ")
 
   cli::cli_alert_success("Credentials stored successfully.")
   invisible(TRUE)
