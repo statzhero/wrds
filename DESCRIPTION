@@ -1,6 +1,6 @@
 Package: wrds
 Title: Access 'Wharton Research Data Services' ('WRDS')
-Version: 0.0.1
+Version: 0.0.2
 Authors@R:
     person("Ulrich", "Atz", , "ulrich.atz@unibocconi.it", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-1719-3780"))
