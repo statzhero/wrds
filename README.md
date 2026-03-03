@@ -1,4 +1,8 @@
 # wrds
+<!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/wrds)](https://CRAN.R-project.org/package=wrds)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
 
 Simple functions for accessing data from [Wharton Research Data Services](https://wrds-www.wharton.upenn.edu/) (WRDS). A WRDS account is required.
 
