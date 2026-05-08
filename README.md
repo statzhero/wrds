@@ -59,7 +59,7 @@ describe_table(wrds, "comp", "funda", max_cols = 5)
 #> # ... with 943 more columns
 ```
 
-To browse interactively in the [Positron](https://positron.posit.co/) or [RStudio](https://posit.co/products/open-source/rstudio/) Connections pane:
+To browse interactively in the [Positron](https://positron.posit.co/) or [RStudio](https://posit.co/products/open-source/rstudio) Connections pane:
 
 ```r
 library(connections)
