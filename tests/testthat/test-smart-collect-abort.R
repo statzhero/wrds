@@ -1,6 +1,7 @@
 # Integration test for smart_collect abort threshold with real CRSP data
 
 test_that("smart_collect aborts for daily CRSP without filters", {
+  skip_on_cran()
   skip_if_no_wrds()
 
   wrds <- wrds_connect()

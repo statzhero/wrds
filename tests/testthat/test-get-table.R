@@ -1,12 +1,5 @@
 # Unit tests
 
-test_that("get_table requires valid connection", {
-  expect_error(
-    get_table("not a connection", "crsp", "msf"),
-    "must be a database connection"
-  )
-})
-
 test_that("get_table requires single character library", {
   wrds <- mock_connection()
   expect_error(
@@ -29,6 +22,35 @@ test_that("get_table requires single character table", {
     get_table(wrds, "crsp", 123),
     "must be a single character string"
   )
+})
+
+test_that("get_table applies n limit via head()", {
+  mock_tbl <- structure(list(), class = c("tbl_lazy", "tbl"))
+  head_called_with <- NULL
+
+  local_mocked_bindings(
+    dbIsValid = function(dbObj, ...) TRUE,
+    .package = "DBI"
+  )
+  local_mocked_bindings(
+    tbl = function(src, from, ...) mock_tbl,
+    .package = "dplyr"
+  )
+  local_mocked_bindings(
+    head = function(x, n, ...) {
+      head_called_with <<- n
+      x
+    },
+    .package = "utils"
+  )
+  local_mocked_bindings(
+    smart_collect = function(tbl, wrds, lazy = FALSE) tbl
+  )
+
+  wrds <- mock_connection()
+  get_table(wrds, "crsp", "msf", n = 25, lazy = TRUE)
+
+  expect_equal(head_called_with, 25)
 })
 
 # Integration tests

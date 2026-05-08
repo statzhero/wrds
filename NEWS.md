@@ -1,3 +1,7 @@
+# wrds 0.1.1
+
+* Improved test suite.
+
 # wrds 0.1.0
 
 * `wrds_connect()` now gives an informative error when authentication fails, with guidance on password updates and Duo 2FA enrollment.

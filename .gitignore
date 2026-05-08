@@ -14,5 +14,6 @@ plans/
 .claude
 
 _problems/
+tests/testthat/testthat-problems.rds
 
 /.quarto/

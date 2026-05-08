@@ -1,12 +1,3 @@
-# Unit tests
-
-test_that("link_ccm requires valid connection", {
-  expect_error(
-    link_ccm("not a connection"),
-    "must be a database connection"
-  )
-})
-
 # Integration tests
 
 test_that("link_ccm returns expected columns", {
@@ -58,13 +49,6 @@ test_that("link_ccm handles missing linkenddt", {
 })
 
 # link_ibes_crsp tests
-
-test_that("link_ibes_crsp requires valid connection", {
-  expect_error(
-    link_ibes_crsp("not a connection"),
-    "must be a database connection"
-  )
-})
 
 test_that("link_ibes_crsp returns expected columns", {
   skip_on_cran()

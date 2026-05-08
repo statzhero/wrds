@@ -1,12 +1,5 @@
 # Unit tests
 
-test_that("get_company requires valid connection", {
-  expect_error(
-    get_company("not a connection"),
-    "must be a database connection"
-  )
-})
-
 test_that("company_config returns correct table for NA", {
   config <- company_config("na")
   expect_equal(config$table, "company")

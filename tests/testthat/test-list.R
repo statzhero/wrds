@@ -1,26 +1,3 @@
-# Unit tests
-
-test_that("list_libraries requires valid connection", {
-  expect_error(
-    list_libraries("not a connection"),
-    "must be a database connection"
-  )
-})
-
-test_that("list_tables requires valid connection", {
-  expect_error(
-    list_tables("not a connection", "comp"),
-    "must be a database connection"
-  )
-})
-
-test_that("describe_table requires valid connection", {
-  expect_error(
-    describe_table("not a connection", "comp", "funda"),
-    "must be a database connection"
-  )
-})
-
 # Integration tests
 
 test_that("list_libraries returns character vector", {

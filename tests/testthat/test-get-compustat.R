@@ -1,12 +1,28 @@
 # Unit tests
 
-test_that("get_compustat requires valid connection", {
+test_that("get_compustat rejects invalid frequency", {
+  wrds <- mock_connection()
+  local_mocked_bindings(
+    dbIsValid = function(dbObj, ...) TRUE,
+    .package = "DBI"
+  )
   expect_error(
-    get_compustat("not a connection"),
-    "must be a database connection"
+    get_compustat(wrds, frequency = "monthly"),
+    "monthly"
   )
 })
 
+test_that("get_compustat rejects invalid region", {
+  wrds <- mock_connection()
+  local_mocked_bindings(
+    dbIsValid = function(dbObj, ...) TRUE,
+    .package = "DBI"
+  )
+  expect_error(
+    get_compustat(wrds, region = "europe"),
+    "europe"
+  )
+})
 
 test_that("compustat_config returns correct table for NA annual", {
   config <- compustat_config("annual", "na")

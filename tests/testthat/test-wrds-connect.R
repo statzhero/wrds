@@ -1,13 +1,93 @@
 # Unit tests (no connection needed)
 
-test_that("wrds_connect fails gracefully without credentials", {
-  # Temporarily use non-existent key names
+# -- check_connection ---------------------------------------------------------
 
+test_that("check_connection rejects non-DBIConnection objects", {
+  expect_error(
+    check_connection("not a connection"),
+    "must be a database connection"
+
+  )
+  expect_error(
+    check_connection(42),
+    "must be a database connection"
+  )
+})
+
+test_that("check_connection rejects invalid (closed) connections", {
+  mock_conn <- mock_connection()
+  local_mocked_bindings(
+    dbIsValid = function(dbObj, ...) FALSE,
+    .package = "DBI"
+  )
+  expect_error(
+    check_connection(mock_conn),
+    "no longer valid"
+  )
+})
+
+# -- wrds_connect -------------------------------------------------------------
+
+test_that("wrds_connect fails gracefully without username", {
   expect_error(
     wrds_connect(user_key = "nonexistent_wrds_test_user"),
     "Could not retrieve WRDS username"
   )
 })
+
+test_that("wrds_connect fails gracefully without password", {
+  local_mocked_bindings(
+    key_get = function(service, ...) {
+      if (service == "wrds_user") return("fake_user")
+      stop("key not found")
+    },
+    .package = "keyring"
+  )
+  expect_error(
+    wrds_connect(),
+    "Could not retrieve WRDS password"
+  )
+})
+
+test_that("wrds_connect wraps PAM authentication errors", {
+  local_mocked_bindings(
+    key_get = function(service, ...) {
+      if (service == "wrds_user") return("fake_user")
+      if (service == "wrds_pw") return("fake_pw")
+    },
+    .package = "keyring"
+  )
+  local_mocked_bindings(
+    dbConnect = function(...) {
+      stop("PAM authentication failed for user \"fake_user\"")
+    },
+    .package = "DBI"
+  )
+  expect_error(
+    wrds_connect(),
+    "authentication failed"
+  )
+})
+
+test_that("wrds_connect wraps generic connection errors", {
+  local_mocked_bindings(
+    key_get = function(service, ...) {
+      if (service == "wrds_user") return("fake_user")
+      if (service == "wrds_pw") return("fake_pw")
+    },
+    .package = "keyring"
+  )
+  local_mocked_bindings(
+    dbConnect = function(...) stop("connection refused"),
+    .package = "DBI"
+  )
+  expect_error(
+    wrds_connect(),
+    "Failed to connect to WRDS"
+  )
+})
+
+# -- wrds_set_credentials / wrds_update_password ------------------------------
 
 test_that("wrds_set_credentials requires interactive session", {
   skip_if(interactive(), "Test only runs in non-interactive mode")
