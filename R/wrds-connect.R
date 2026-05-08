@@ -14,8 +14,9 @@
 #'
 #' @details
 #' Credentials must be set up before first use with [wrds_set_credentials()].
-#' The connection uses `bigint = "integer"` for compatibility with R's
-#' integer type.
+#' The connection uses `bigint = "numeric"` so that 64-bit integers from
+#' PostgreSQL are returned as doubles, which avoids overflow and works
+#' well with tidyverse functions.
 #'
 #' @seealso [wrds_disconnect()], [wrds_set_credentials()]
 #'
@@ -50,15 +51,31 @@ wrds_connect <- function(user_key = "wrds_user",
   )
 
 
-  DBI::dbConnect(
-    RPostgres::Postgres(),
-    host = "wrds-pgdata.wharton.upenn.edu",
-    port = 9737,
-    dbname = "wrds",
-    user = user,
-    password = password,
-    sslmode = "require",
-    bigint = "integer"
+  tryCatch(
+    DBI::dbConnect(
+      RPostgres::Postgres(),
+      host = "wrds-pgdata.wharton.upenn.edu",
+      port = 9737,
+      dbname = "wrds",
+      user = user,
+      password = password,
+      sslmode = "require",
+      bigint = "numeric"
+    ),
+    error = \(e) {
+      msg <- conditionMessage(e)
+      if (grepl("PAM authentication failed", msg)) {
+        cli::cli_abort(c(
+          "WRDS authentication failed for user {.val {user}}.",
+          "i" = "Your password may be incorrect. Run {.fn wrds_update_password} to update it.",
+          "i" = "WRDS requires Two-Factor Authentication (Duo). If you have not yet enrolled, visit {.url https://wrds-www.wharton.upenn.edu} to complete enrollment."
+        ), parent = e)
+      }
+      cli::cli_abort(
+        "Failed to connect to WRDS.",
+        parent = e
+      )
+    }
   )
 }
 
@@ -123,5 +140,33 @@ wrds_set_credentials <- function(user_key = "wrds_user",
   keyring::key_set(password_key, keyring = keyring, prompt = "WRDS password: ")
 
   cli::cli_alert_success("Credentials stored successfully.")
+  invisible(TRUE)
+}
+
+#' Update WRDS password
+#'
+#' Interactively updates the WRDS password stored in the system keyring
+#' without changing the username.
+#'
+#' @inheritParams wrds_set_credentials
+#'
+#' @return Invisibly returns `TRUE` on success.
+#'
+#' @seealso [wrds_set_credentials()], [wrds_connect()]
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' wrds_update_password()
+#' }
+wrds_update_password <- function(password_key = "wrds_pw",
+                                 keyring = NULL) {
+  if (!interactive()) {
+    cli::cli_abort("wrds_update_password() must be run interactively.")
+  }
+
+  keyring::key_set(password_key, keyring = keyring, prompt = "New WRDS password: ")
+
+  cli::cli_alert_success("Password updated successfully.")
   invisible(TRUE)
 }

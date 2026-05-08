@@ -25,8 +25,9 @@ stored securely in the system keyring.
 }
 \details{
 Credentials must be set up before first use with \code{\link[=wrds_set_credentials]{wrds_set_credentials()}}.
-The connection uses \code{bigint = "integer"} for compatibility with R's
-integer type.
+The connection uses \code{bigint = "numeric"} so that 64-bit integers from
+PostgreSQL are returned as doubles, which avoids overflow and works
+well with tidyverse functions.
 }
 \examples{
 \dontrun{

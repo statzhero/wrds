@@ -17,6 +17,14 @@ test_that("wrds_set_credentials requires interactive session", {
   )
 })
 
+test_that("wrds_update_password requires interactive session", {
+  skip_if(interactive(), "Test only runs in non-interactive mode")
+  expect_error(
+    wrds_update_password(),
+    "must be run interactively"
+  )
+})
+
 # Integration tests (require credentials)
 
 test_that("wrds_connect establishes valid connection", {

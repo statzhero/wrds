@@ -1,6 +1,6 @@
 Package: wrds
 Title: Access 'Wharton Research Data Services' ('WRDS')
-Version: 0.0.2
+Version: 0.1.0
 Authors@R:
     person("Ulrich", "Atz", , "ulrich.atz@unibocconi.it", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-1719-3780"))
@@ -11,8 +11,7 @@ Description: Provides simple functions for accessing data from 'Wharton Research
     fundamentals, and linking tables.
 License: MIT + file LICENSE
 Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
+Config/roxygen2/markdown: TRUE
 URL: https://github.com/statzhero/wrds
 BugReports: https://github.com/statzhero/wrds/issues
 Suggests:
@@ -28,4 +27,4 @@ Imports:
     rlang,
     RPostgres,
     tidylog
-
+Config/roxygen2/version: 8.0.0
