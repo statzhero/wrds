@@ -183,6 +183,7 @@ wrds:::compustat_config("quarterly", "global")
 | `wrds_connect()` | Connect to WRDS using keyring credentials |
 | `wrds_disconnect()` | Close connection |
 | `wrds_set_credentials()` | Store credentials in system keyring |
+| `wrds_update_password()` | Update WRDS password without changing username |
 | `list_libraries()` | List available schemas |
 | `list_tables()` | List tables in a schema |
 | `describe_table()` | Glimpse table structure and sample values |
