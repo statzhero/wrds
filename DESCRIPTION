@@ -9,6 +9,8 @@ Description: Provides simple functions for accessing data from 'Wharton Research
     research. Includes credential management via the system keyring,
     database tools, and functions for downloading generic tables, 'Compustat'
     fundamentals, and linking tables.
+Depends:
+    R (>= 4.1)
 License: MIT + file LICENSE
 Encoding: UTF-8
 Config/roxygen2/markdown: TRUE
