@@ -32,7 +32,7 @@ well with tidyverse functions.
 \examples{
 \dontrun{
 wrds <- wrds_connect()
-list_libraries(wrds)
+list_subscriptions(wrds)
 wrds_disconnect(wrds)
 }
 }

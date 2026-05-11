@@ -43,7 +43,7 @@ library(wrds)
 wrds <- wrds_connect()
 
 # Discover available data
-list_libraries(wrds)
+list_subscriptions(wrds)
 list_tables(wrds, "comp")
 
 # Inspect table structure
@@ -185,7 +185,7 @@ wrds:::compustat_config("quarterly", "global")
 | `wrds_disconnect()` | Close connection |
 | `wrds_set_credentials()` | Store credentials in system keyring |
 | `wrds_update_password()` | Update WRDS password without changing username |
-| `list_libraries()` | List available schemas |
+| `list_subscriptions()` | List subscribed data products |
 | `list_tables()` | List tables in a schema |
 | `describe_table()` | Glimpse table structure and sample values |
 | `get_table()` | Generic access to any WRDS table |
