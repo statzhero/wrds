@@ -24,7 +24,7 @@
 #' @examples
 #' \dontrun{
 #' wrds <- wrds_connect()
-#' list_libraries(wrds)
+#' list_subscriptions(wrds)
 #' wrds_disconnect(wrds)
 #' }
 wrds_connect <- function(user_key = "wrds_user",
@@ -68,7 +68,8 @@ wrds_connect <- function(user_key = "wrds_user",
         cli::cli_abort(c(
           "WRDS authentication failed for user {.val {user}}.",
           "i" = "Your password may be incorrect. Run {.fn wrds_update_password} to update it.",
-          "i" = "WRDS requires Two-Factor Authentication (Duo). If you have not yet enrolled, visit {.url https://wrds-www.wharton.upenn.edu} to complete enrollment."
+          "i" = "WRDS requires Two-Factor Authentication (Duo). If you have not yet enrolled, visit {.url https://wrds-www.wharton.upenn.edu} to complete enrollment.",
+          "i" = "You may also need to accept the Terms & Conditions by logging in at {.url https://wrds-www.wharton.upenn.edu}."
         ), parent = e)
       }
       cli::cli_abort(

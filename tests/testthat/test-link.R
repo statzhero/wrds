@@ -57,6 +57,10 @@ test_that("link_ibes_crsp returns expected columns", {
   wrds <- wrds_connect()
   withr::defer(wrds_disconnect(wrds))
 
+  subs <- list_subscriptions(wrds)
+  skip_if(!("wrdsapps_link_crsp_ibes" %in% subs),
+          "No subscription to IBES-CRSP linking table")
+
   ibes <- link_ibes_crsp(wrds, lazy = TRUE)
 
   cols <- colnames(ibes)
@@ -73,6 +77,10 @@ test_that("link_ibes_crsp filters by max_score", {
 
   wrds <- wrds_connect()
   withr::defer(wrds_disconnect(wrds))
+
+  subs <- list_subscriptions(wrds)
+  skip_if(!("wrdsapps_link_crsp_ibes" %in% subs),
+          "No subscription to IBES-CRSP linking table")
 
   # Default excludes score 6
   ibes <- link_ibes_crsp(wrds, lazy = TRUE) |>

@@ -1,6 +1,6 @@
 # wrds 0.1.1
 
-* Improved test suite.
+* `list_subscriptions()` lists subscribed data products.
 
 # wrds 0.1.0
 

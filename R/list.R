@@ -1,30 +1,61 @@
-#' List available libraries
+#' List subscribed data products
 #'
-#' Returns a character vector of available schema names (libraries) on WRDS.
+#' Returns a character vector of WRDS schemas the user has access to.
 #'
 #' @param wrds A `DBIConnection` object returned by [wrds_connect()].
 #'
-#' @return A character vector of library names.
+#' @return A character vector of schema names.
 #'
 #' @export
 #' @examples
 #' \dontrun{
 #' wrds <- wrds_connect()
-#' list_libraries(wrds)
+#' list_subscriptions(wrds)
 #' wrds_disconnect(wrds)
 #' }
-list_libraries <- function(wrds) {
+list_subscriptions <- function(wrds) {
   check_connection(wrds)
 
+  # Matches the approach used by the official WRDS Python package.
+  # Schemas with actual tables are included directly. View-only schemas
+  # (friendly names) are included only when their views reference
+  # accessible product tables, which filters out unsubscribed products.
   sql <- "
-    SELECT DISTINCT table_schema
-    FROM information_schema.tables
-    WHERE table_type = 'VIEW'
-    ORDER BY table_schema
+    WITH pgobjs AS (
+      SELECT oid, relnamespace, relkind
+      FROM pg_class
+      WHERE relkind = ANY (ARRAY['r', 'v', 'f', 'p'])
+    ),
+    schemas AS (
+      SELECT nspname AS schemaname, pg_namespace.oid,
+             array_agg(DISTINCT relkind) AS relkind_a
+      FROM pg_namespace
+      JOIN pgobjs ON pg_namespace.oid = relnamespace
+      WHERE nspname !~ '(^pg_)|(_old$)|(_new$)|(information_schema)'
+        AND has_schema_privilege(nspname, 'USAGE')
+      GROUP BY nspname, pg_namespace.oid
+    )
+    SELECT schemaname AS schema_name FROM schemas
+    WHERE relkind_a != ARRAY['v'::\"char\"]
+    UNION
+    SELECT nv.schemaname AS schema_name FROM schemas nv
+    JOIN pgobjs v ON nv.oid = v.relnamespace AND v.relkind = 'v'
+    JOIN pg_depend dv ON v.oid = dv.refobjid
+      AND dv.refclassid = 'pg_class'::regclass::oid
+      AND dv.classid = 'pg_rewrite'::regclass::oid
+      AND dv.deptype = 'i'
+    JOIN pg_depend dt ON dv.objid = dt.objid AND dv.refobjid <> dt.refobjid
+      AND dt.classid = 'pg_rewrite'::regclass::oid
+      AND dt.refclassid = 'pg_class'::regclass::oid
+    JOIN pgobjs t ON dt.refobjid = t.oid
+      AND t.relkind = ANY (ARRAY['r', 'v', 'f', 'p'])
+    JOIN schemas nt ON t.relnamespace = nt.oid
+    GROUP BY nv.schemaname
+    ORDER BY 1
   "
 
   result <- DBI::dbGetQuery(wrds, sql)
-  result$table_schema
+  result$schema_name
 }
 
 #' List tables in a library
