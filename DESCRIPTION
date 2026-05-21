@@ -14,7 +14,8 @@ Depends:
 License: MIT + file LICENSE
 Encoding: UTF-8
 Config/roxygen2/markdown: TRUE
-URL: https://github.com/statzhero/wrds
+URL: https://statzhero.github.io/wrds/,
+    https://github.com/statzhero/wrds
 BugReports: https://github.com/statzhero/wrds/issues
 Suggests:
     testthat (>= 3.0.0),
@@ -30,3 +31,4 @@ Imports:
     RPostgres,
     tidylog
 Config/roxygen2/version: 8.0.0
+Config/Needs/website: pkgdown
