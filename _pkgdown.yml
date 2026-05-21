@@ -1,0 +1,61 @@
+url: https://statzhero.github.io/wrds/
+
+template:
+  bootstrap: 5
+  light-switch: true
+  bslib:
+    primary: "#b51236"
+    navbar-light-bg: "#13547a"
+    navbar-dark-bg: "#0e3f5c"
+    navbar-light-color: "#ffffff"
+    navbar-dark-color: "#e0e0e0"
+
+navbar:
+  structure:
+    left: [intro, home, reference, news]
+    right: [search, github, lightswitch]
+  components:
+    home:
+      text: Readme
+      href: index.html
+    news:
+      text: News
+      href: news/index.html
+
+footer:
+  structure:
+    left: developed_by
+    right: built_with
+
+home:
+  sidebar:
+    structure: [links, community, citation, authors, dev, license]
+
+reference:
+- title: Connection
+  desc: Connect to WRDS and manage credentials.
+- contents:
+  - wrds_connect
+  - wrds_disconnect
+  - wrds_set_credentials
+  - wrds_update_password
+- title: Discovery
+  desc: Explore available data on WRDS.
+- contents:
+  - list_subscriptions
+  - list_tables
+  - describe_table
+- title: Download
+  desc: Pre-built functions for common datasets.
+- contents:
+  - get_compustat
+  - get_company
+  - get_table
+- title: Linking
+  desc: Merge identifiers across databases.
+- contents:
+  - link_ccm
+  - link_ibes_crsp
+- title: Utilities
+- contents:
+  - sic_2digit
