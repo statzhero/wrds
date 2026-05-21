@@ -1,0 +1,10 @@
+/* Tighter navbar padding to match ulrichatz.org */
+.navbar {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* Version badge text in navbar */
+.navbar .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
