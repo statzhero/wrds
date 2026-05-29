@@ -263,3 +263,10 @@ Merge identifiers across databases.
 - [`sic_2digit()`](https://statzhero.github.io/wrds/reference/sic_2digit.md)
   : Convert SIC codes to 2-digit industry codes
 
+## Data
+
+Reference datasets shipped with the package.
+
+- [`wrds_products`](https://statzhero.github.io/wrds/reference/wrds_products.md)
+  : WRDS product catalog
+

@@ -1,7 +1,7 @@
 # List tables in a library
 
-Returns a character vector of table names within a WRDS library
-(schema).
+Returns a tibble of table names within a WRDS library (schema), with
+human-readable descriptions where available.
 
 ## Usage
 
@@ -22,7 +22,7 @@ list_tables(wrds, library)
 
 ## Value
 
-A character vector of table names.
+A tibble with columns `table` and `description`.
 
 ## Examples
 

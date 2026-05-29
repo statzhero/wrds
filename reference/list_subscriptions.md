@@ -1,6 +1,7 @@
 # List subscribed data products
 
-Returns a character vector of WRDS schemas the user has access to.
+Returns a tibble of WRDS schemas the user has access to, with
+human-readable product names where available.
 
 ## Usage
 
@@ -17,7 +18,7 @@ list_subscriptions(wrds)
 
 ## Value
 
-A character vector of schema names.
+A tibble with columns `schema` and `product`.
 
 ## Examples
 

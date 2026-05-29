@@ -1,7 +1,7 @@
 # Describe a table
 
-Displays a glimpse-like summary of a WRDS table showing column names and
-types, similar to
+Displays a glimpse-like summary of a WRDS table showing column names,
+types, and human-readable labels, similar to
 [`dplyr::glimpse()`](https://pillar.r-lib.org/reference/glimpse.html).
 
 ## Usage
@@ -40,7 +40,11 @@ Invisibly returns a list with components:
 
 - columns:
 
-  A data frame with `column_name` and `data_type`
+  A data frame with `column_name`, `data_type`, and `label`
+
+- description:
+
+  Table description, or `NA` if unavailable
 
 - nrow:
 

@@ -10,6 +10,8 @@ database tools, and functions for downloading generic tables,
 
 Useful links:
 
+- <https://statzhero.github.io/wrds/>
+
 - <https://github.com/statzhero/wrds>
 
 - Report bugs at <https://github.com/statzhero/wrds/issues>

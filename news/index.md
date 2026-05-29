@@ -1,5 +1,18 @@
 # Changelog
 
+## wrds (development version)
+
+- [`describe_table()`](https://statzhero.github.io/wrds/reference/describe_table.md)
+  now shows human-readable column labels and table descriptions from
+  WRDS metadata.
+- [`list_subscriptions()`](https://statzhero.github.io/wrds/reference/list_subscriptions.md)
+  now returns a tibble with `schema` and `product` columns instead of a
+  character vector. Product names are mapped from the `wrds_products`
+  dataset.
+- [`list_tables()`](https://statzhero.github.io/wrds/reference/list_tables.md)
+  now returns a tibble with `table` and `description` columns instead of
+  a character vector. Descriptions come from WRDS metadata.
+
 ## wrds 0.1.1
 
 CRAN release: 2026-05-11

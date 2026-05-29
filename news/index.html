@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">wrds</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,6 +39,15 @@
       <small>Source: <a href="https://github.com/statzhero/wrds/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="development version" id="wrds-development-version">wrds (development version)<a class="anchor" aria-label="anchor" href="#wrds-development-version"></a></h2>
+<ul><li>
+<code><a href="../reference/describe_table.html">describe_table()</a></code> now shows human-readable column labels and table descriptions from WRDS metadata.</li>
+<li>
+<code><a href="../reference/list_subscriptions.html">list_subscriptions()</a></code> now returns a tibble with <code>schema</code> and <code>product</code> columns instead of a character vector. Product names are mapped from the <code>wrds_products</code> dataset.</li>
+<li>
+<code><a href="../reference/list_tables.html">list_tables()</a></code> now returns a tibble with <code>table</code> and <code>description</code> columns instead of a character vector. Descriptions come from WRDS metadata.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.1.1" id="wrds-011">wrds 0.1.1<a class="anchor" aria-label="anchor" href="#wrds-011"></a></h2><p class="text-muted">CRAN release: 2026-05-11</p>
 <ul><li>
