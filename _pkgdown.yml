@@ -3,6 +3,7 @@ url: https://statzhero.github.io/wrds/
 template:
   bootstrap: 5
   light-switch: true
+  llm: full
   bslib:
     primary: "#b51236"
     navbar-light-bg: "#13547a"
