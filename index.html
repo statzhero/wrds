@@ -95,19 +95,42 @@
 <span></span>
 <span><span class="co"># Discover available data</span></span>
 <span><span class="fu"><a href="reference/list_subscriptions.html">list_subscriptions</a></span><span class="op">(</span><span class="va">wrds</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 278 × 2</span></span>
+<span><span class="co">#&gt;    schema           product</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;            &lt;chr&gt;</span></span>
+<span><span class="co">#&gt;  1 aha_sample       AHA Sample</span></span>
+<span><span class="co">#&gt;  2 ahasamp          NA</span></span>
+<span><span class="co">#&gt;  3 audit            NA</span></span>
+<span><span class="co">#&gt;  4 audit_acct_os    Audit Analytics - Accounting and Oversight</span></span>
+<span><span class="co">#&gt;  5 audit_audit_comp Audit Analytics - Audit and Compliance</span></span>
+<span><span class="co">#&gt;  # ... with 273 more rows</span></span>
+<span></span>
 <span><span class="fu"><a href="reference/list_tables.html">list_tables</a></span><span class="op">(</span><span class="va">wrds</span>, <span class="st">"comp"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 293 × 2</span></span>
+<span><span class="co">#&gt;    table         description</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;         &lt;chr&gt;</span></span>
+<span><span class="co">#&gt;  1 aco_amda      Annual Financial Notes</span></span>
+<span><span class="co">#&gt;  2 aco_imda      Interim Financial Notes</span></span>
+<span><span class="co">#&gt;  3 aco_indfnta   Industry-Specific Annual Footnote</span></span>
+<span><span class="co">#&gt;  # ... with 290 more rows</span></span>
 <span></span>
 <span><span class="co"># Inspect table structure</span></span>
 <span><span class="fu"><a href="reference/describe_table.html">describe_table</a></span><span class="op">(</span><span class="va">wrds</span>, <span class="st">"comp"</span>, <span class="st">"funda"</span>, max_cols <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt; comp.funda</span></span>
-<span><span class="co">#&gt; Rows: 929,001</span></span>
-<span><span class="co">#&gt; Columns: 948</span></span>
-<span><span class="co">#&gt; $ gvkey    &lt;chr&gt;  "001000", "001000", "001000", "001000", "001000", ...</span></span>
-<span><span class="co">#&gt; $ datadate &lt;date&gt; 1961-12-31, 1962-12-31, 1963-12-31, 1964-12-31, ...</span></span>
-<span><span class="co">#&gt; $ fyear    &lt;int&gt;  1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, ...</span></span>
-<span><span class="co">#&gt; $ indfmt   &lt;chr&gt;  "INDL", "INDL", "INDL", "INDL", "INDL", "INDL", "INDL", ...</span></span>
-<span><span class="co">#&gt; $ consol   &lt;chr&gt;  "C", "C", "C", "C", "C", "C", "C", "C", "C", "C", "C", ...</span></span>
-<span><span class="co">#&gt; # ... with 943 more columns</span></span></code></pre></div>
+<span><span class="co">#&gt; Merged Fundamental Annual File</span></span>
+<span><span class="co">#&gt; Rows: 940,325</span></span>
+<span><span class="co">#&gt; Columns: 949</span></span>
+<span><span class="co">#&gt; $ gvkey    &lt;chr&gt;  Global Company Key</span></span>
+<span><span class="co">#&gt;   "001000", "001000", "001000", "001000", "001000", ...</span></span>
+<span><span class="co">#&gt; $ datadate &lt;date&gt; Data Date</span></span>
+<span><span class="co">#&gt;   1961-12-31, 1962-12-31, 1963-12-31, 1964-12-31, ...</span></span>
+<span><span class="co">#&gt; $ fyear    &lt;int&gt;  Data Year - Fiscal</span></span>
+<span><span class="co">#&gt;   1961, 1962, 1963, 1964, 1965, 1966, 1967, ...</span></span>
+<span><span class="co">#&gt; $ indfmt   &lt;chr&gt;  Industry Format</span></span>
+<span><span class="co">#&gt;   "INDL", "INDL", "INDL", "INDL", "INDL", ...</span></span>
+<span><span class="co">#&gt; $ consol   &lt;chr&gt;  Level of Consolidation - Company Annual Descriptor</span></span>
+<span><span class="co">#&gt;   "C", "C", "C", "C", "C", "C", "C", ...</span></span>
+<span><span class="co">#&gt; # ... with 944 more columns</span></span></code></pre></div>
 <p>To browse interactively in the <a href="https://positron.posit.co/" class="external-link">Positron</a> or <a href="https://posit.co/products/open-source/rstudio" class="external-link">RStudio</a> Connections pane:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/connections" class="external-link">connections</a></span><span class="op">)</span></span>
@@ -147,23 +170,22 @@
 <span><span class="co">#&gt;    sich     n</span></span>
 <span><span class="co">#&gt;   &lt;int&gt; &lt;int&gt;</span></span>
 <span><span class="co">#&gt; 1  4841     1</span></span>
-<span><span class="co">#&gt; 2  5080    24</span></span>
+<span><span class="co">#&gt; 2  5080    25</span></span>
 <span><span class="co">#&gt; 3  5712     3</span></span>
-<span><span class="co">#&gt; 4    NA    72</span></span>
+<span><span class="co">#&gt; 4    NA    71</span></span>
 <span></span>
 <span><span class="co"># Fill missing historical SIC codes with SIC from comp.company</span></span>
 <span><span class="fu"><a href="reference/get_compustat.html">get_compustat</a></span><span class="op">(</span><span class="va">wrds</span>, fill_sic <span class="op">=</span> <span class="cn">TRUE</span>, n <span class="op">=</span> <span class="fl">100</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="va">sic</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 8 × 2</span></span>
+<span><span class="co">#&gt; # A tibble: 7 × 2</span></span>
 <span><span class="co">#&gt;   sic       n</span></span>
 <span><span class="co">#&gt;   &lt;chr&gt; &lt;int&gt;</span></span>
 <span><span class="co">#&gt; 1 3089     17</span></span>
 <span><span class="co">#&gt; 2 3825     13</span></span>
 <span><span class="co">#&gt; 3 3949      3</span></span>
 <span><span class="co">#&gt; 4 4841      2</span></span>
-<span><span class="co">#&gt; 5 4911      1</span></span>
-<span><span class="co">#&gt; 6 5080     46</span></span>
-<span><span class="co">#&gt; 7 5712     10</span></span>
-<span><span class="co">#&gt; 8 5812      8</span></span>
+<span><span class="co">#&gt; 5 5080     47</span></span>
+<span><span class="co">#&gt; 6 5712     10</span></span>
+<span><span class="co">#&gt; 7 5812      8</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/wrds_disconnect.html">wrds_disconnect</a></span><span class="op">(</span><span class="va">wrds</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -272,15 +294,15 @@
 </tr>
 <tr>
 <td><code><a href="reference/list_subscriptions.html">list_subscriptions()</a></code></td>
-<td>List subscribed data products</td>
+<td>List subscribed data products with human-readable names</td>
 </tr>
 <tr>
 <td><code><a href="reference/list_tables.html">list_tables()</a></code></td>
-<td>List tables in a schema</td>
+<td>List tables in a schema with descriptions</td>
 </tr>
 <tr>
 <td><code><a href="reference/describe_table.html">describe_table()</a></code></td>
-<td>Glimpse table structure and sample values</td>
+<td>Glimpse table structure with column labels</td>
 </tr>
 <tr>
 <td><code><a href="reference/get_table.html">get_table()</a></code></td>
@@ -301,6 +323,10 @@
 <tr>
 <td><code><a href="reference/link_ibes_crsp.html">link_ibes_crsp()</a></code></td>
 <td>Get IBES-CRSP linking table</td>
+</tr>
+<tr>
+<td><code>wrds_products</code></td>
+<td>Reference dataset mapping schemas to product names</td>
 </tr>
 </tbody>
 </table>
