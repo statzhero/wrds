@@ -44,19 +44,42 @@ wrds <- wrds_connect()
 
 # Discover available data
 list_subscriptions(wrds)
+#> # A tibble: 278 × 2
+#>    schema           product
+#>    <chr>            <chr>
+#>  1 aha_sample       AHA Sample
+#>  2 ahasamp          NA
+#>  3 audit            NA
+#>  4 audit_acct_os    Audit Analytics - Accounting and Oversight
+#>  5 audit_audit_comp Audit Analytics - Audit and Compliance
+#>  # ... with 273 more rows
+
 list_tables(wrds, "comp")
+#> # A tibble: 293 × 2
+#>    table         description
+#>    <chr>         <chr>
+#>  1 aco_amda      Annual Financial Notes
+#>  2 aco_imda      Interim Financial Notes
+#>  3 aco_indfnta   Industry-Specific Annual Footnote
+#>  # ... with 290 more rows
 
 # Inspect table structure
 describe_table(wrds, "comp", "funda", max_cols = 5)
 #> comp.funda
-#> Rows: 929,001
-#> Columns: 948
-#> $ gvkey    <chr>  "001000", "001000", "001000", "001000", "001000", ...
-#> $ datadate <date> 1961-12-31, 1962-12-31, 1963-12-31, 1964-12-31, ...
-#> $ fyear    <int>  1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, ...
-#> $ indfmt   <chr>  "INDL", "INDL", "INDL", "INDL", "INDL", "INDL", "INDL", ...
-#> $ consol   <chr>  "C", "C", "C", "C", "C", "C", "C", "C", "C", "C", "C", ...
-#> # ... with 943 more columns
+#> Merged Fundamental Annual File
+#> Rows: 940,325
+#> Columns: 949
+#> $ gvkey    <chr>  Global Company Key
+#>   "001000", "001000", "001000", "001000", "001000", ...
+#> $ datadate <date> Data Date
+#>   1961-12-31, 1962-12-31, 1963-12-31, 1964-12-31, ...
+#> $ fyear    <int>  Data Year - Fiscal
+#>   1961, 1962, 1963, 1964, 1965, 1966, 1967, ...
+#> $ indfmt   <chr>  Industry Format
+#>   "INDL", "INDL", "INDL", "INDL", "INDL", ...
+#> $ consol   <chr>  Level of Consolidation - Company Annual Descriptor
+#>   "C", "C", "C", "C", "C", "C", "C", ...
+#> # ... with 944 more columns
 ```
 
 To browse interactively in the [Positron](https://positron.posit.co/) or [RStudio](https://posit.co/products/open-source/rstudio) Connections pane:
@@ -100,23 +123,22 @@ get_compustat(wrds, n = 100) |> dplyr::count(sich)
 #>    sich     n
 #>   <int> <int>
 #> 1  4841     1
-#> 2  5080    24
+#> 2  5080    25
 #> 3  5712     3
-#> 4    NA    72
+#> 4    NA    71
 
 # Fill missing historical SIC codes with SIC from comp.company
 get_compustat(wrds, fill_sic = TRUE, n = 100) |> dplyr::count(sic)
-#> # A tibble: 8 × 2
+#> # A tibble: 7 × 2
 #>   sic       n
 #>   <chr> <int>
 #> 1 3089     17
 #> 2 3825     13
 #> 3 3949      3
 #> 4 4841      2
-#> 5 4911      1
-#> 6 5080     46
-#> 7 5712     10
-#> 8 5812      8
+#> 5 5080     47
+#> 6 5712     10
+#> 7 5812      8
 
 wrds_disconnect(wrds)
 ```
@@ -185,14 +207,15 @@ wrds:::compustat_config("quarterly", "global")
 | `wrds_disconnect()` | Close connection |
 | `wrds_set_credentials()` | Store credentials in system keyring |
 | `wrds_update_password()` | Update WRDS password without changing username |
-| `list_subscriptions()` | List subscribed data products |
-| `list_tables()` | List tables in a schema |
-| `describe_table()` | Glimpse table structure and sample values |
+| `list_subscriptions()` | List subscribed data products with human-readable names |
+| `list_tables()` | List tables in a schema with descriptions |
+| `describe_table()` | Glimpse table structure with column labels |
 | `get_table()` | Generic access to any WRDS table |
 | `get_compustat()` | Download Compustat fundamentals |
 | `get_company()` | Download Compustat company header data |
 | `link_ccm()` | Get CRSP-Compustat linking table |
 | `link_ibes_crsp()` | Get IBES-CRSP linking table |
+| `wrds_products` | Reference dataset mapping schemas to product names |
 
 ## References
 
