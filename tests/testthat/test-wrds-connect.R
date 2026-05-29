@@ -6,7 +6,6 @@ test_that("check_connection rejects non-DBIConnection objects", {
   expect_error(
     check_connection("not a connection"),
     "must be a database connection"
-
   )
   expect_error(
     check_connection(42),

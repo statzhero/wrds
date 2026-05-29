@@ -11,6 +11,7 @@ Provides simple functions for accessing data from 'Wharton Research Data Service
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://statzhero.github.io/wrds/}
   \item \url{https://github.com/statzhero/wrds}
   \item Report bugs at \url{https://github.com/statzhero/wrds/issues}
 }

@@ -1,7 +1,6 @@
 .onLoad <- function(libname, pkgname) {
-
-op <- options()
-op_wrds <- list(
+  op <- options()
+  op_wrds <- list(
     wrds.collect_threshold = 200000L,
     wrds.abort_threshold = 2000000L
   )
@@ -16,7 +15,6 @@ op_wrds <- list(
     right = paste0(pkgname, " ", utils::packageVersion(pkgname))
   )
   packageStartupMessage(header)
-
 
   user <- tryCatch(
     keyring::key_get("wrds_user"),

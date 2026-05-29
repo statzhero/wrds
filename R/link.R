@@ -57,11 +57,13 @@
 #'
 #' wrds_disconnect(wrds)
 #' }
-link_ccm <- function(wrds,
-                     linktype = c("LC", "LU", "LS"),
-                     linkprim = c("P", "C"),
-                     n = Inf,
-                     lazy = FALSE) {
+link_ccm <- function(
+  wrds,
+  linktype = c("LC", "LU", "LS"),
+  linkprim = c("P", "C"),
+  n = Inf,
+  lazy = FALSE
+) {
   check_connection(wrds)
 
   tbl <- dplyr::tbl(wrds, DBI::Id(schema = "crsp", table = "ccmxpf_lnkhist")) |>
@@ -141,10 +143,7 @@ link_ccm <- function(wrds,
 #'
 #' wrds_disconnect(wrds)
 #' }
-link_ibes_crsp <- function(wrds,
-                           max_score = 5L,
-                           n = Inf,
-                           lazy = FALSE) {
+link_ibes_crsp <- function(wrds, max_score = 5L, n = Inf, lazy = FALSE) {
   check_connection(wrds)
 
   tbl <- dplyr::tbl(

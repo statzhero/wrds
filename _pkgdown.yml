@@ -59,3 +59,7 @@ reference:
 - title: Utilities
 - contents:
   - sic_2digit
+- title: Data
+  desc: Reference datasets shipped with the package.
+- contents:
+  - wrds_products

@@ -1,10 +1,11 @@
 #' List subscribed data products
 #'
-#' Returns a character vector of WRDS schemas the user has access to.
+#' Returns a tibble of WRDS schemas the user has access to, with
+#' human-readable product names where available.
 #'
 #' @param wrds A `DBIConnection` object returned by [wrds_connect()].
 #'
-#' @return A character vector of schema names.
+#' @return A tibble with columns `schema` and `product`.
 #'
 #' @export
 #' @examples
@@ -55,17 +56,24 @@ list_subscriptions <- function(wrds) {
   "
 
   result <- DBI::dbGetQuery(wrds, sql)
-  result$schema_name
+
+  dplyr::left_join(
+    dplyr::tibble(schema = result$schema_name),
+    wrds_products,
+    by = dplyr::join_by(schema),
+    relationship = "many-to-one"
+  )
 }
 
 #' List tables in a library
 #'
-#' Returns a character vector of table names within a WRDS library (schema).
+#' Returns a tibble of table names within a WRDS library (schema), with
+#' human-readable descriptions where available.
 #'
 #' @param wrds A `DBIConnection` object returned by [wrds_connect()].
 #' @param library Character. The name of the library (schema) to query.
 #'
-#' @return A character vector of table names.
+#' @return A tibble with columns `table` and `description`.
 #'
 #' @export
 #' @examples
@@ -78,31 +86,35 @@ list_tables <- function(wrds, library) {
   check_connection(wrds)
 
   sql <- "
-    SELECT DISTINCT table_name
-    FROM information_schema.columns
-    WHERE table_schema = $1
-    ORDER BY table_name
+    SELECT c.relname AS table_name,
+           obj_description(c.oid, 'pg_class') AS description
+    FROM pg_class c
+    JOIN pg_namespace n ON n.oid = c.relnamespace
+    WHERE n.nspname = $1
+      AND c.relkind IN ('r', 'v', 'f', 'p')
+    ORDER BY c.relname
   "
 
   result <- DBI::dbGetQuery(wrds, sql, params = list(library))
-  result$table_name
+  dplyr::tibble(table = result$table_name, description = result$description)
 }
 
 #' Describe a table
 #'
-#' Displays a glimpse-like summary of a WRDS table showing column names
-#' and types, similar to [dplyr::glimpse()].
+#' Displays a glimpse-like summary of a WRDS table showing column names,
+#' types, and human-readable labels, similar to [dplyr::glimpse()].
 #'
 #' @param wrds A `DBIConnection` object returned by [wrds_connect()].
 #' @param library Character. The name of the library (schema).
 #' @param table Character. The name of the table.
 #' @param n Integer. Number of sample rows to fetch for value preview.
-#'   Default is 20. 
+#'   Default is 20.
 #' @param max_cols Integer. Maximum number of columns to display. Default is 25.
 #'
 #' @return Invisibly returns a list with components:
 #' \describe{
-#'   \item{columns}{A data frame with `column_name` and `data_type`}
+#'   \item{columns}{A data frame with `column_name`, `data_type`, and `label`}
+#'   \item{description}{Table description, or `NA` if unavailable}
 #'   \item{nrow}{Row count}
 #'   \item{sample}{A data frame with sample rows (if `n > 0`)}
 #' }
@@ -117,6 +129,12 @@ list_tables <- function(wrds, library) {
 describe_table <- function(wrds, library, table, n = 20, max_cols = 25) {
   check_connection(wrds)
 
+  qualified <- sprintf(
+    "%s.%s",
+    DBI::dbQuoteIdentifier(wrds, library),
+    DBI::dbQuoteIdentifier(wrds, table)
+  )
+
   col_sql <- "
     SELECT column_name, data_type
     FROM information_schema.columns
@@ -125,12 +143,42 @@ describe_table <- function(wrds, library, table, n = 20, max_cols = 25) {
   "
   columns <- DBI::dbGetQuery(wrds, col_sql, params = list(library, table))
 
-  count_sql <- sprintf(
-    "SELECT COUNT(*) AS n FROM %s.%s",
-    DBI::dbQuoteIdentifier(wrds, library),
-    DBI::dbQuoteIdentifier(wrds, table)
+  # Column labels from PostgreSQL comments
+  label_sql <- sprintf(
+    "SELECT a.attname AS column_name,
+            col_description(a.attrelid, a.attnum) AS label
+     FROM pg_attribute a
+     WHERE a.attrelid = %s::regclass
+       AND a.attnum > 0
+       AND NOT a.attisdropped
+     ORDER BY a.attnum",
+    DBI::dbQuoteLiteral(wrds, paste0(library, ".", table))
+  )
+  labels <- tryCatch(
+    DBI::dbGetQuery(wrds, label_sql),
+    error = \(e) NULL
+  )
+  if (!is.null(labels)) {
+    columns <- dplyr::left_join(
+      columns,
+      labels,
+      by = dplyr::join_by(column_name)
+    )
+  } else {
+    columns$label <- NA_character_
+  }
+
+  # Table-level description
+  desc_sql <- sprintf(
+    "SELECT obj_description(%s::regclass, 'pg_class') AS description",
+    DBI::dbQuoteLiteral(wrds, paste0(library, ".", table))
+  )
+  description <- tryCatch(
+    DBI::dbGetQuery(wrds, desc_sql)$description,
+    error = \(e) NA_character_
   )
 
+  count_sql <- sprintf("SELECT COUNT(*) AS n FROM %s", qualified)
   nrow <- tryCatch(
     DBI::dbGetQuery(wrds, count_sql)$n,
     error = \(e) NA_integer_
@@ -138,12 +186,7 @@ describe_table <- function(wrds, library, table, n = 20, max_cols = 25) {
 
   sample_data <- NULL
   if (n > 0) {
-    sample_sql <- sprintf(
-      "SELECT * FROM %s.%s LIMIT %d",
-      DBI::dbQuoteIdentifier(wrds, library),
-      DBI::dbQuoteIdentifier(wrds, table),
-      n
-    )
+    sample_sql <- sprintf("SELECT * FROM %s LIMIT %d", qualified, n)
     sample_data <- tryCatch(
       DBI::dbGetQuery(wrds, sample_sql),
       error = \(e) NULL
@@ -153,6 +196,9 @@ describe_table <- function(wrds, library, table, n = 20, max_cols = 25) {
   ncol <- nrow(columns)
 
   cli::cli_text("{.strong {library}.{table}}")
+  if (!is.na(description)) {
+    cli::cli_text(cli::col_silver(description))
+  }
   cli::cli_text("Rows: {cli::col_blue(format(nrow, big.mark = ','))}")
   cli::cli_text("Columns: {cli::col_blue(ncol)}")
 
@@ -186,15 +232,33 @@ describe_table <- function(wrds, library, table, n = 20, max_cols = 25) {
     pg_type <- columns$data_type[i]
     r_type <- type_map[pg_type]
     if (is.na(r_type)) r_type <- pg_type
+    label <- columns$label[i]
 
     padded_name <- format(col_name, width = max_name_width)
     padded_type <- format(paste0("<", r_type, ">"), width = type_width)
 
+    label_text <- if (!is.na(label)) cli::col_cyan(label) else ""
+
     if (!is.null(sample_data) && col_name %in% names(sample_data)) {
-      preview <- format_preview(sample_data[[col_name]], r_type, available_width)
-      cli::cli_text("$ {padded_name} {.emph {padded_type}} {preview}")
+      preview <- format_preview(
+        sample_data[[col_name]],
+        r_type,
+        available_width
+      )
+      if (nzchar(label_text)) {
+        cli::cli_text("$ {padded_name} {.emph {padded_type}} {label_text}")
+        cli::cli_text(
+          "  {strrep(' ', max_name_width)} {strrep(' ', type_width)} {preview}"
+        )
+      } else {
+        cli::cli_text("$ {padded_name} {.emph {padded_type}} {preview}")
+      }
     } else {
-      cli::cli_text("$ {padded_name} {.emph {padded_type}}")
+      if (nzchar(label_text)) {
+        cli::cli_text("$ {padded_name} {.emph {padded_type}} {label_text}")
+      } else {
+        cli::cli_text("$ {padded_name} {.emph {padded_type}}")
+      }
     }
   }
 
@@ -203,7 +267,12 @@ describe_table <- function(wrds, library, table, n = 20, max_cols = 25) {
     cli::cli_text(cli::col_silver("# ... with {remaining} more column{?s}"))
   }
 
-  invisible(list(columns = columns, nrow = nrow, sample = sample_data))
+  invisible(list(
+    columns = columns,
+    description = description,
+    nrow = nrow,
+    sample = sample_data
+  ))
 }
 
 #' Format column values for preview display

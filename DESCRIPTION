@@ -1,6 +1,6 @@
 Package: wrds
 Title: Access 'Wharton Research Data Services' ('WRDS')
-Version: 0.1.1
+Version: 0.1.1.9000
 Authors@R:
     person("Ulrich", "Atz", , "ulrich.atz@unibocconi.it", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-1719-3780"))
@@ -12,6 +12,7 @@ Description: Provides simple functions for accessing data from 'Wharton Research
 Depends:
     R (>= 4.1)
 License: MIT + file LICENSE
+LazyData: true
 Encoding: UTF-8
 Config/roxygen2/markdown: TRUE
 URL: https://statzhero.github.io/wrds/,
