@@ -65,7 +65,8 @@ test_that("get_compustat returns NA annual data", {
   wrds <- wrds_connect()
   withr::defer(wrds_disconnect(wrds))
 
-  funda <- get_compustat(wrds,
+  funda <- get_compustat(
+    wrds,
     start_date = "2022-01-01",
     end_date = "2022-12-31"
   )
@@ -84,7 +85,8 @@ test_that("get_compustat returns NA quarterly data", {
   wrds <- wrds_connect()
   withr::defer(wrds_disconnect(wrds))
 
-  fundq <- get_compustat(wrds,
+  fundq <- get_compustat(
+    wrds,
     frequency = "quarterly",
     start_date = "2022-01-01",
     end_date = "2022-03-31"
@@ -103,7 +105,8 @@ test_that("get_compustat returns global data", {
   wrds <- wrds_connect()
   withr::defer(wrds_disconnect(wrds))
 
-  g_funda <- get_compustat(wrds,
+  g_funda <- get_compustat(
+    wrds,
     region = "global",
     start_date = "2022-01-01",
     end_date = "2022-12-31"
@@ -135,7 +138,8 @@ test_that("get_compustat accepts additional columns", {
   withr::defer(wrds_disconnect(wrds))
 
   # emp (employees) is not in defaults but exists in funda
-  funda <- get_compustat(wrds,
+  funda <- get_compustat(
+    wrds,
     start_date = "2022-01-01",
     end_date = "2022-12-31",
     add_columns = "emp"
@@ -154,7 +158,8 @@ test_that("fill_sic alerts for global region", {
   withr::defer(wrds_disconnect(wrds))
 
   expect_message(
-    get_compustat(wrds,
+    get_compustat(
+      wrds,
       region = "global",
       start_date = "2022-01-01",
       end_date = "2022-12-31",
@@ -172,7 +177,8 @@ test_that("fill_sic fills missing SIC codes", {
   wrds <- wrds_connect()
   withr::defer(wrds_disconnect(wrds))
 
-  funda <- get_compustat(wrds,
+  funda <- get_compustat(
+    wrds,
     start_date = "2022-01-01",
     end_date = "2022-12-31",
     fill_sic = TRUE
@@ -207,14 +213,16 @@ test_that("fill_sic reduces NA count compared to sich alone", {
   withr::defer(wrds_disconnect(wrds))
 
   # Get data with sich only
-  funda_sich <- get_compustat(wrds,
+  funda_sich <- get_compustat(
+    wrds,
     start_date = "2022-01-01",
     end_date = "2022-12-31",
     add_columns = "sich"
   )
 
- # Get data with fill_sic
-  funda_filled <- get_compustat(wrds,
+  # Get data with fill_sic
+  funda_filled <- get_compustat(
+    wrds,
     start_date = "2022-01-01",
     end_date = "2022-12-31",
     fill_sic = TRUE

@@ -1,0 +1,609 @@
+Product code,Description
+aha_sample,AHA Sample
+audit_acct_os,Audit Analytics - Accounting and Oversight
+audit_audit_comp,Audit Analytics - Audit and Compliance
+audit_common,Audit Analytics - Common Tables
+audit_europe,Audit Analytics -- Europe
+auditsmp_all,Audit Analytics Trial
+bank_all,WRDS Bank Regulatory Database
+bank_premium_samp,WRDS Bank Research Suite Sample
+block_all,Blockholders Database
+boardex_eur,BoardEx - Europe
+boardex_na,BoardEx - North America
+boardex_trial,BoardEx Trial / Sample
+boardex_uk,BoardEx - UK
+bvd_amadeus_trial,BvD Amadeus Trial
+bvd_bvdbankf_trial,BvD Bank Focus Trial
+bvd_orbis_trial,BvD Orbis Sample
+calcbench_trial,Calcbench Trial / Sample
+candid_samp,Sample/Trial version of Candid
+cboe_all,Daily pricing of the VIX (Volatility Index) from Cboe
+cboe_sample,CBOE Options End of Day Sample
+ciq_common,Capital IQ Helper
+ciq_pplintel,Capital IQ People Intelligence
+ciqsamp_capstrct,Capital IQ Sample Capital Structure
+ciqsamp_common,Capital IQ Sample Helper
+ciqsamp_keydev,Capital IQ Sample Key Developments
+ciqsamp_pplintel,Capital IQ Sample People Intelligence
+ciqsamp_ratings,Capital IQ Sample Ratings
+ciqsamp_transactions,CIQ Transactions Sample
+ciqsamp_transcripts,Capital IQ Sample Transcripts
+comp_bank_daily,Compustat Bank - daily updates
+comp_execucomp,S&P Compustat Executive Compensation
+comp_global_daily,Compustat Global - daily updates
+comp_na_daily_all,Compustat North America - daily updates (current + historical data)
+comp_segments_hist_daily,Compustat Historical Segments - daily updates
+comp_snapshot,Compustat Snapshot
+compsamp_all,S&P Compustat North America Sample
+compsamp_computext,Computext Sample
+compsamp_snapshot,Compustat Snapshot - Sample
+contrib_as_filed_financials,Contributed Database: As-Filed Financial Statement Data
+contrib_bond_dickerson,Corporate Bond Data – Dickerson
+contrib_bond_firm_link,Bond-Firm Link by Fang
+contrib_ceo_turnover,Contributed Database: CEO Turnover
+contrib_char_returns,Contributed Data - Characteristic Returns
+contrib_corp_fed_litigation,Corporate Federal Litigation Data
+contrib_corporate_bond_returns,Contributed Corporate Bond Returns
+contrib_corporate_culture,Contributed Database of corporate culture scores
+contrib_general,Contributed Data
+contrib_global_factor,Global Factor Data
+contrib_intangible_value,Contributed Database: Intangible Value
+contrib_kpss,KPSS Technological Innovation
+contrib_liva,Contributed Database: LIVA
+contrib_shale,None
+crsp_a_ccm,CRSP/Compustat Merged (Annual)
+crsp_a_indexes,CRSP Indexes (Annual)
+crsp_a_stock,CRSP Stock (Annual)
+crsp_a_stock10,10 years of monthly CRSP Stock history
+crsp_q_indexhist,CRSP Index History Intraday (Quarterly)
+crsp_q_mutualfunds,CRSP Mutual Funds (Quarterly)
+crsp_q_stock,CRSP Stock (Quarterly)
+crspsamp_all,CRSP Sample
+crspsamp_mf,CRSP Mutual Fund Sample
+csmsamp_all,CSMAR Sample
+djones_all,Dow Jones Averages & Total Return Indexes
+dmef_all,Direct Marketing Educational Foundation
+doe_all,SEC Disclosure of Order Execution Statistics
+etfg_samp,ETF Global - Sample
+factsamp_all,Factset sample
+factsamp_revere,Factset Revere - Trial / Sample
+ff_all,Fama-French portfolios and factors
+fisd_common,Mergent Common Files
+fisd_fisd,Mergent FISD Database
+fisdsamp_all,Mergent FISD sample
+fjc_linking,Federal Judicial Center Linking
+fjc_litigation,Federal Judicial Center Litigation
+frb_all,Federal Reserve Board rates
+ftsesamp_russell_us,FTSE Russell Sample
+gutenberg,Project Gutenberg
+hfrsamp_hfrdb,HFR Sample (non-identifiers)
+ibessamp_kpi,IBES Key Performance Indicators Sample
+ims_obp_trial,IMS - SK&A Office Based Premium Trial
+infogroupsamp_business,Infogroup Sample - Business
+infogroupsamp_residential,Infogroup Sample - Residential
+infraclear_samp,Sample data of Infraclear
+iri_all,IRI Marketing Fact Book
+macrofin_comm_trade,Macro Finance Society
+macrofin_comm_trade_ccm,Compound Product Requiring CRSP and Comp
+markit_cds,Markit Credit Default Swap
+markit_cdxcomps,Markit CDX (Credit Indices) Composites
+markit_itraxxascomps,Markit iTraxx Asian Composites
+markit_itraxxeucomps,Markit iTraxx European Composites
+markit_itraxxsocomps,Markit iTraxx SovX Composites
+morningstarsamp_cisdm,Morningstar CISDM sample
+mpsych_sample,MarketPsych Sample
+mrktsamp_cds,Markit Credit Default Swap Sample
+mrktsamp_cdx,Markit Credit Indices Sample
+mrktsamp_msf,Markit Securities Finance Sample
+mrktsamp_red,Markit Red Sample
+msci_climate_samp,MSCI Climate Transition Sample
+msci_common_samp,MSCI Common Sample
+msci_esg_samp,MSCI Sustainability Scores and Ratings Sample
+msrb_all,MSRB - Municipal Securities Transaction Data
+msrbsamp_all,MSRB Trial/Sample - Municipal Securities Transaction Data
+optionm_all,IvyDB US by OptionMetrics
+optionmsamp_europe,OptionMetrics Sample / Trial - IvyDB Europe
+optionmsamp_us,OptionMetrics Sample / Trial - IvyDB US
+otc_endofday,OTC Markets End-of-Day Pricing
+panjiva_samp,Panjiva Sample
+phlx_all,Philadelphia Stock Exchange Currency Options and Implied Volatility
+pitchsmp,Pitchbook Private Equity and Venture Capital - sample data
+preqsamp_all,Preqin Sample Database
+public_all,Publicly Available Data
+pwt_all,The Penn World Tables Database
+ravenpack_trial,RavenPack - Trial Edition
+reprisk_common,RepRisk Common Files (for legacy RepRisk products subscribers)
+reprisk_pm,RepRisk Premium Dataset (Legacy)
+reprisk_sample,RepRisk - Sample / Trial
+reprisk_v2,RepRisk Data Feed Package | Listed and non-listed companies
+revelio_samp,Revelio Sample
+risksamp_all,ISS (formerly RiskMetrics) Trial / Sample Subsets
+rq_all,Research Quotient
+rstat_samp,Sample of RoyaltyStat Royalties
+secsamp_all,WRDS SEC Platform Sample
+sustainalyticssamp_all,Sustainalytics Trial / Sample
+taqmsamp_all,Sample Millisecond TAQ
+taqsamp_all,NYSE Trades and Quotes Sample
+totalq_all,Total q by Luke Taylor
+tr_common,None
+tr_dealscan,Thomson Reuters DealScan
+tr_sdc_samples,None
+trace_enhanced,FINRA TRACE Enhanced
+trace_standard,FINRA TRACE corporate bond trades
+trsamp_all,Thomson Reuters Samples
+trsamp_db_dmi,D&B U.S. DMI - Sample Version
+trsamp_db_wb,D&B’s Global Archive/WorldBase - Sample Version
+trsamp_ds_eq,Datastream Equities Sample
+trsamp_dscom,Datastream Commodities - Sample Data
+trsamp_dsecon,Datastream Economics - Sample Data
+trsamp_dsfut,Datastream Futures - Sample Data
+trsamp_esg,Refinitiv ESG - Sample Version
+trsamp_sdc_ma,Thomson Reuters SDC Trial / Sample - M&A
+trsamp_sdc_ni,Thomson Reuters SDC Trial / Sample - New Issues
+trsamp_worldscope,Thomson Reuters Worldscope - Sample/Trial
+trucost_common,Trucost Common Tables
+trucost_environ,Trucost Environmental
+trucost_fossilfuel,Trucost Environmental: Fossil Fuels
+trucost_samp,Trucost Sample
+trucost_sector_ff,Trucost Environmental: Fossil Fuels Sector
+trucost_sector_revenue,Trucost Environmental: Revenue Sector
+twoiq_samp,2iQ Trial / Sample
+wrds_abs_samp,Securitized Loans & Leases by WRDS - Form ABS Sample
+wrds_environmental_samp,WRDS Environmental Sample
+wrds_insiders_samp,WRDS Insiders Sample
+wrds_mcp_access,Enables access to WRDS via the MCP interface.
+wrds_mcp_reference_tools,Grants access to WRDS reference tools via MCP.
+wrds_mutualfund_samp,WRDS Mutual Fund Sample
+wrds_sec_search,SEC full text search in PostgreSQL.
+wrds_shortvolume_samp,WRDS Short Volume Sample
+wrdsapps_all,WRDS Research Applications
+wrdsapps_backtest_basic,WRDS Backtest Basic
+wrdsapps_backtest_plus,WRDS Backtest Plus
+wrdsapps_beta,WRDS Beta Suite
+wrdsapps_bondret,WRDS Bond Returns
+wrdsapps_effrontier,WRDS Efficient Frontier
+wrdsapps_eushort,WRDS EU Short Sales
+wrdsapps_evtstudy_int,Event Study Intl using Compustat
+wrdsapps_evtstudy_lr,Event Study Long Run
+wrdsapps_evtstudy_us,Event Study US
+wrdsapps_finratio,WRDS Financial Ratios (base)
+wrdsapps_finratio_ccm,WRDS Financial Ratios with CCM
+wrdsapps_link_comp_eushort,Linking Suite: Compustat - European Short Data
+wrdsapps_link_crsp_bond,Linking Suite: Bond - CRSP
+wrdsapps_link_crsp_comp_bdx,Linking Suite: Boardex - Compustat - CRSP
+wrdsapps_link_crsp_factset,Linking Suite: Factset - CRSP
+wrdsapps_link_crsp_optionm,Linking Suite: Optionmetrics - CRSP
+wrdsapps_link_crsp_taq,Linking Suite: TAQ Monthly - CRSP
+wrdsapps_link_supplychain,Linking Suite: Supply Chain
+wrdsapps_optionsig,WRDS Options Suite
+wrdsapps_patents,WRDS Patent Database
+wrdsapps_plink_boardex_ciq,None
+wrdsapps_plink_common,Common product for People Linking.
+wrdsapps_plink_exec_boardex,None
+wrdsapps_plink_exec_ciq,None
+wrdsapps_subsidiary,WRDS Company Subsidiaries
+wrdsapps_windices,WRDS World Indices
+wrdsappssamp_all,WRDS Research Application Samples
+wrdsrpts_rep_usage,WRDS Usage Reports for consumption by WRDS Representatives
+wrdssec_all,WRDS SEC Platform
+wrdssec_common,WRDS SEC Linking and helper tables
+wrdssec_midas,MIDAS
+wrdssec_secsa,WRDS SEC Sentiment Analysis
+zacksamp_all,Zacks Investment Research Sample Data
+aha_annual_survey_3years,AHA Annual Survey (3 Years)
+aha_annual_survey_hist,AHA Annual Survey History (30+ years)
+aha_annual_survey_recent,AHA Annual Survey (Recent 15+ years)
+aha_common,AHA Common data
+aha_hcris_3years,Financial Database (3 Years)
+aha_hcris_recent,Financial Database (Recent 10+ years)
+aha_it_survey_3years,AHA IT Survey (3 Years)
+aha_it_survey_recent,AHA IT Survey (Recent 10+ years)
+audit_corp_legal,Audit Analytics - Corporate and Legal
+audit_esg_funds,Audit Analytics - ESG and Funds
+audit_oia,Audit Analytics - Other Independent Audits
+audit_sedar,Audit Analytics -- Canada (SEDAR)
+bank_premium,WRDS Bank Regulatory Premium
+boardex_row,BoardEx - Rest of World
+bvd_ama_large,BvD Amadeus Large Companies
+bvd_ama_medium,BvD Amadeus Medium Companies
+bvd_ama_small,BvD Amadeus Small Companies
+bvd_ama_verylarge,BvD Amadeus Very Large Companies
+bvd_bvdbankf,BvD Orbis Bank Focus
+bvd_orbis_large,BvD Orbis Very Large and Large Companies
+bvd_orbis_medium,BvD Orbis Medium Companies
+bvd_orbis_small,BvD Orbis Small Companies
+bvd_osiris,BvD Osiris
+calcbench_ap_ar,Calcbench - Accounts Payable and Receivable including Unbilled Revenue
+calcbench_business_combinations,Calcbench - Business Combinations
+calcbench_business_segments,Calcbench - Business Segments
+calcbench_commitment_contingency,Calcbench - Commitment and Contingency
+calcbench_common,Calcbench - Common
+calcbench_concentration_risk,Calcbench - Concentration Risk
+calcbench_derivatives_hedging,Calcbench - Derivatives and Hedging
+calcbench_discontinued_ops,Calcbench - Discontinued Operations and Retructuring
+calcbench_equity_compensation,Calcbench - Equity Based Compensation
+calcbench_equity_investments,Calcbench - Equity and Cost Method Investments
+calcbench_equity_repurchases,Calcbench - Equity/Share Repurchases
+calcbench_fair_value,Calcbench - Fair Value of Financial Instruments
+calcbench_goodwill,Calcbench - Goodwill and Intangible Assets
+calcbench_income_tax,Calcbench - Income Tax
+calcbench_inventory,Calcbench - Inventory Including Reserves and Write-downs
+calcbench_leases,Calcbench - Leases - Capital and Operating
+candid_3yr,Candid nonprofits 3-year data
+candid_6yr,Candid nonprofits 6-year data
+candid_9yr,Candid nonprofits 9-year data
+cboe_eod,CBOE Options End of Day
+ciq_capstrct,Capital IQ Capital Structure
+ciq_keydev,Capital IQ Key Developments
+ciq_ratings,Capital IQ Ratings
+ciq_transactions,Capital IQ Transactions
+ciq_transcripts,Capital IQ Transcripts
+comp_filings,S&P Filing Dates
+comp_ph,S&P Compustat Preliminary History (Charter Oaks)
+comp_pit,S&P Compustat Point in Time (Charter Oaks)
+comp_ratings,S&P Ratings - legacy
+comp_urq,S&P Compustat Unrestated Quarterly (Charter Oaks)
+comscore_2002,Comscore 2002
+comscore_2004,Comscore 2004
+comscore_2006,Comscore 2006
+comscore_2007,Comscore 2007
+comscore_2008,Comscore 2008
+comscore_2009,Comscore 2009
+comscore_2010,Comscore 2010
+comscore_2011,Comscore 2011
+comscore_2012,Comscore 2012
+comscore_2013,Comscore 2013
+comscore_2014,Comscore 2014
+comscore_2015,Comscore 2015
+comscore_2016,Comscore 2016
+comscore_2017,Comscore 2017
+comscore_2018,Comscore 2018
+comscore_2019,Comscore 2019
+comscore_2020,Comscore 2020
+comscore_2021,Comscore 2021
+comscore_2022,Comscore 2022
+comscore_2023,Comscore 2023
+comscore_2024,Comscore 2024
+comscore_2025,Comscore 2025
+comscore_common,Comscore Common Files (for all Comscore subscribers)
+contrib_green_returns,Contributed Database: Green Returns
+contrib_liquidity_taq,Contributed Database: Measures of Liquidity in TAQ
+crsp_a_stock62,CRSP Stock 1962 (Annual)
+crsp_a_treasuries,CRSP Treasuries (Annual)
+crsp_a_ziman,CRSP Ziman Real Estates (Annual)
+crsp_m_ccm,CRSP Compustat Merged (Monthly)
+crsp_m_indexes,CRSP Indexes (Monthly)
+crsp_m_stock,CRSP Stock (Monthly)
+crsp_m_stock62,CRSP Stock 1962 (Monthly)
+crsp_m_treasuries,CRSP Treasuries (Monthly)
+crsp_m_ziman,CRSP Ziman Real Estates (Monthly)
+crsp_q_ccm,CRSP/Compustat Merged (Quarterly)
+crsp_q_indexes,CRSP Indexes (Quarterly)
+crsp_q_mi_hist,CRSPMI 2013 Historical Indexes
+crsp_q_stock62,CRSP Stock-1962 (Quarterly)
+crsp_q_treasuries,CRSP Treasuries (Quarterly)
+crsp_q_ziman,CRSP Ziman Real Estates (Quarterly)
+csmar_af,CSMAR Analyst Forecast
+csmar_cd,CSMAR Cash and Stock Dividends
+csmar_cg,CSMAR Corporate Governance
+csmar_colc,CSMAR Overseas Listed Company
+csmar_financial,Chinese Stock Market Database - Financials
+csmar_funds,Chinese Stock Market Database - Funds
+csmar_hld,CSMAR Shareholders
+csmar_ini,CSMAR Institutional Investor
+csmar_ipo_a,CSMAR Initial Public Offering (A Shares)
+csmar_ma,CSMAR M&A and Asset Restructuring Data
+csmar_rs,CSMAR Seasoned Equity Offering
+csmar_trade,Chinese Stock Market Database - Trades
+cusip_all,CUSIP Master
+datastream_wscope,old product code and was replaced by wrdsapps_link_datastream_wscope
+estimize_estimates_consensus,Estimize crowdsourced EPS & Revenue estimates
+etfg_analytics,ETF Global Analytics
+etfg_constituents,ETF Global Constituents
+etfg_fund_flow,ETF Global Fund Flow
+etfg_industry,ETF Global Industry
+evts_all,Eventus software
+factset_common,Factset Common Files
+factset_ff_int,Factset Fundamentals non US and CAN region
+factset_ff_usc,Factset Fundamentals US and CAN region
+factset_own,Factset Ownership LionShares
+factset_revere_common,Factset Revere - Common Files included with all Revere subscriptions
+factset_revere_geo_rev,Factset Revere - Geographic Revenue Exposure
+factset_revere_ind_class,Factset Revere - Industry Classification and Business Segment Revenue
+factset_revere_supply_chain,Factset Revere - Supply Chain / Relationships
+fisd_naic,Mergent FISD transactions
+form_metadata,Stores variable information that doesn't fit elsewhere.
+ftse_russell_us,FTSE Russel US
+gmi_all,MSCI GMI Ratings CEOs; Companies; Directorships;Takeover
+hfr_academic_dead,HFR Inactive Funds - Academic Version
+hfr_academic_live,HFR Active Funds - Academic Version
+hfr_hfrdb,HFR Active Funds
+hfr_hfrdb_dead,HFR Inactive Funds
+ims_hist_3yr_obp_premium,IMS - SK&A Office Based Physicians Last 3 Years
+ims_hist_3yr_obp_standard_plus,IMS - SK&A Office Based Physicians Last 3 Years
+ims_hist_5yr_obp_premium,IMS - SK&A Office Based Physicians Last 5 Years
+ims_hist_5yr_obp_standard_plus,IMS - SK&A Office Based Physicians Last 5 Years
+ims_hist_obp_premium,IMS - SK&A Historical Office Based Premium
+ims_hist_obp_standard,IMS - SK&A Historical Office Based Standard
+ims_hist_obp_standard_plus,IMS - SK&A Historical Office Based Standard Plus
+ims_obp_premium,IMS - SK&A Office Based Premium
+ims_obp_standard,IMS - SK&A Office Based Standard
+ims_obp_standard_plus,IMS - SK&A Office Based Standard Plus
+infogroup_business_academic,Infogroup - Business Academic
+infogroup_residential,Infogroup - Residential
+infraclear_metadata,Infraclear Metadata
+infraclear_sector_ind,Infraclear Industrial Sector
+infraclear_sector_mog,"Infraclear Mining, Oil, Gas Sector"
+infraclear_sector_mshd,"Infraclear Municipal, Social, Health, Defense Sector"
+infraclear_sector_pow,Infraclear Power Sector
+infraclear_sector_trn,Infraclear Transport Sector
+infraclear_sector_tsc,"Infraclear Telecom, Semiconductor Sector"
+iss_climate_core,ISS Climate Core
+iss_climate_emissions,ISS Climate Potential Avoided Emissions
+iss_climate_energy,ISS Climate Energy and Extractives Screening
+iss_climate_impact,ISS Climate Impact
+iss_climate_physical_risk,ISS Climate Physical Risk
+iss_compensation_analytics,Executive Compensation Analytics
+iss_compensation_peers,Executive compensation peer groups
+iss_directors_global,Global director and board statistics
+iss_incentive_lab,ISS Incentive Lab
+iss_incentive_lab_europe,ISS Incentive Lab - Europe
+iss_va_mf,ISS Voting Analytics - Mutual Fund Vote Records
+iss_va_shareholder,ISS Voting Analytics - Shareholder Proposals
+iss_va_vote_global,ISS Voting Analytics - Company Vote Results Global
+iss_va_vote_us,ISS Voting Analytics - Company Vote Results US
+issm_all,NYSE/AMEX trades and quotes - Exists for FK contraint
+issm_common,ISSM trades and Quotes - for website use
+issm_nasd1987,NASDAQ trades and quotes for 1987
+issm_nasd1988,NASDAQ trades and quotes for 1988
+issm_nasd1989,NASDAQ trades and quotes for 1989
+issm_nasd1990,NASDAQ trades and quotes for 1990
+issm_nasd1991,NASDAQ trades and quotes for 1991
+issm_nasd1992,NASDAQ trades and quotes for 1992
+issm_nyam1983,NYSE/AMEX trades and quotes for 1983
+issm_nyam1984,NYSE/AMEX trades and quotes for 1984
+issm_nyam1985,NYSE/AMEX trades and quotes for 1985
+issm_nyam1986,NYSE/AMEX trades and quotes for 1986
+issm_nyam1987,NYSE/AMEX trades and quotes for 1987
+issm_nyam1988,NYSE/AMEX trades and quotes for 1988
+issm_nyam1989,NYSE/AMEX trades and quotes for 1989
+issm_nyam1990,NYSE/AMEX trades and quotes for 1990
+issm_nyam1991,NYSE/AMEX trades and quotes for 1991
+issm_nyam1992,NYSE/AMEX trades and quotes for 1992
+kld_histall,MSCI ESG KLD STATS
+lexisnexis_metabase,LexisNexis Metabase provides access to news articles since 2010.
+lexisnexis_metabase_full_text,LexisNexis Metabase full text of articles since 2010. WRDS access only.
+lspd_daily,LSPD Daily Product
+lspd_monthly,LSPD Monthly Product
+lspdsamp_all,LSPD sample
+markit_cdxconst,Markit CDX (Credit Indices) Constituents
+markit_itraxxasconst,Markit iTraxx Asian Constituents
+markit_itraxxeuconst,Markit iTraxx European Constituents
+markit_itraxxsoconst,Markit iTraxx SovX Constituents
+markit_msf_analytics_bonds,Markit Securities Finance - Analytics - Bonds
+markit_msf_analytics_eqty_amer,Markit Securities Finance - Analytics - Equity - America
+markit_msf_analytics_eqty_asia,Markit Securities Finance - Analytics - Equity - Asia
+markit_msf_analytics_eqty_euro,Markit Securities Finance - Analytics - Equity - Europe
+markit_msf_analytics_eqty_other,Markit Securities Finance - Analytics - Equity - Other
+markit_msf_inst_bonds,Markit Securities Finance - Institutional - Bonds
+markit_msf_inst_eqty_amer,Markit Securities Finance - Institutional - Equity - America
+markit_msf_inst_eqty_asia,Markit Securities Finance - Institutional - Equity - Asia
+markit_msf_inst_eqty_euro,Markit Securities Finance - Institutional - Equity - Europe
+markit_msf_inst_eqty_other,Markit Securities Finance - Institutional - Equity - Other
+markit_red,Markit Reference Identity Database
+mflinks_all,MF Links
+morningstar_cisdm,Morningstar CISDM
+mpsych_commodities,MarketPsych Commodities
+mpsych_companies,MarketPsych Companies
+mpsych_crypto,MarketPsych Cryptocurrencies
+mpsych_currencies,Marketpsych Currencies
+mpsych_esg_companies,MarketPsych ESG Companies
+mpsych_esg_countries,MarketPsych ESG Countries
+mpsych_locations,Marketpsych Locations
+mpsych_sectors,MarketPsych Sectors
+msci_climate,MSCI Climate Transition
+msci_common,MSCI Common
+msci_esg,MSCI Sustainability Scores and Ratings
+nastraq_1999,NASDAQ Trades and Quotes 1999
+nastraq_2000,NASDAQ Trades and Quotes 2000
+nastraq_2001,NASDAQ Trades and Quotes 2001
+nastraq_2002,NASDAQ Trades and Quotes 2002
+nastraq_2003,NASDAQ Trades and Quotes 2003
+nastraq_2004,NASDAQ Trades and Quotes 2004
+nastraq_2005,NASDAQ Trades and Quotes 2005
+nastraq_2006,NASDAQ Trades and Quotes 2006
+nastraq_2007,NASDAQ Trades and Quotes 2007
+nastraq_2008,NASDAQ Trades and Quotes 2008
+nastraq_all,NASDAQ Trades and Quotes - Exists for FK contraint
+nastraq_common,NASTRAQ Trades and Quotes - for website use
+optionm_europe,IvyDB Europe by OptionMetrics
+pacap_all,PACAP - for website use
+pacap_hongkong,Pacap Hong Kong
+pacap_indonesia,Pacap Indonesia
+pacap_japan,Pacap Japan
+pacap_korea,Pacap Korea
+pacap_malaysia,Pacap Malaysia
+pacap_singapore,Pacap Singapore
+pacap_taiwan,Pacap Taiwan
+pacap_thailand,Pacap Thailand
+panjiva,Panjiva Supply Chain Intelligence
+permstub_all,Permissions Test Product
+pgaudit,None
+pitchbk_common,Pitchbook Common Files
+pitchbk_companies_deals,PitchBook Companies & Deals
+pitchbk_fund_returns,PitchBook Fund Returns
+pitchbk_investors_funds_lps,PitchBook Investors Funds LPs
+pitchbk_other_na,"M+A, other alternative assets for NA"
+pitchbk_other_row,"M+A, other alternative assets for Global firms"
+pitchbk_pe_na,Pitchbook PE North America
+pitchbk_pe_row,Pitchbook Private Equity Global
+pitchbk_people,PitchBook People
+pitchbk_vc_na,Pitchbook VC North America
+pitchbk_vc_row,Pitchbook VC Global
+preqin_cashflow,Preqin Cashflows
+preqin_deals,Preqin venture capital and buyout deals
+preqin_gp,Preqin General Partners (GPs)
+preqin_lp,Preqin Limited Partners (LPs)
+preqin_pe,Preqin - Private Equity (legacy)
+preqin_vc,Preqin - Venture Capital (legacy)
+ravenpack_common,RavenPack - Common Files (for all RavenPack subscribers)
+ravenpack_dj,RavenPack - Dow Jones Edition
+ravenpack_full,RavenPack - Full Edition
+ravenpack_web,RavenPack - Web Edition
+reprisk_std,RepRisk Standard Dataset (Legacy)
+revelio_common,Revelio Common
+revelio_individual,Revelio Individual
+revelio_job_postings,Revelio Job Postings
+revelio_layoffs,Revelio WARN Layoffs
+revelio_sentiment,Revelio Sentiment
+revelio_workforce_dynamics,Revelio Workforce Dynamics - Geographic
+risk_directors,ISS (formerly RiskMetrics) Directors Data
+risk_governance,ISS (formerly RiskMetrics) Corporate Takeover Defense and Governance Data
+risk_proposals,ISS (formerly RiskMetrics) Shareholder Proposals (Legacy)
+risk_votes,ISS (formerly RiskMetrics) Voting Results (Legacy)
+rstat_royalty,Royalties
+sds_rate_transparency,SDS Rate Transparency Data
+sp_esg,S&P ESG
+spre_apac,S&P Research Essentials - Asia-Pacific
+spre_emea,"S&P Research Essentials - Europe, the Middle East and Africa"
+spre_latam,S&P Research Essentials - Latin America
+spre_na,S&P Research Essentials - North America
+spre_usa,S&P Research Essentials - USA
+sustainalytics_all,Sustainalytics
+taq_1993,NYSE Trades & Quotes 1993
+taq_1994,NYSE Trades & Quotes 1994
+taq_1995,NYSE Trades & Quotes 1995
+taq_1996,NYSE Trades & Quotes 1996
+taq_1997,NYSE Trades & Quotes 1997
+taq_1998,NYSE Trades & Quotes 1998
+taq_1999,NYSE Trades & Quotes 1999
+taq_2000,NYSE Trades & Quotes 2000
+taq_2001,NYSE Trades & Quotes 2001
+taq_2002,NYSE Trades & Quotes 2002
+taq_2003,NYSE Trades & Quotes 2003
+taq_2004,NYSE Trades & Quotes 2004
+taq_2005,NYSE Trades & Quotes 2005
+taq_2006,NYSE Trades & Quotes 2006
+taq_2007,NYSE Trades & Quotes 2007
+taq_2008,NYSE Trades & Quotes 2008
+taq_2009,NYSE Trades & Quotes 2009
+taq_2010,NYSE Trades & Quotes 2010
+taq_2011,NYSE Trades & Quotes 2011
+taq_2012,NYSE Trades & Quotes 2012
+taq_2013,NYSE Trades & Quotes 2013
+taq_2014,NYSE Trades & Quotes 2014
+taq_all,NYSE Trades & Quotes - Exists for FK contraint
+taq_common,NYSE Trades and Quotes - for website use
+taq_regsho2005,NYSE Short Sales 2005
+taq_regsho2006,NYSE Short Sales 2006
+taq_regsho2007,NYSE Short Sales 2007
+taqm_2003,NYSE Millisecond Trades & Quotes 2003
+taqm_2004,NYSE Millisecond Trades & Quotes 2004
+taqm_2005,NYSE Millisecond Trades & Quotes 2005
+taqm_2006,NYSE Millisecond Trades & Quotes 2006
+taqm_2007,NYSE Millisecond Trades & Quotes 2007
+taqm_2008,NYSE Millisecond Trades & Quotes 2008
+taqm_2009,NYSE Millisecond Trades & Quotes 2009
+taqm_2010,NYSE Millisecond Trades & Quotes 2010
+taqm_2011,NYSE Millisecond Trades & Quotes 2011
+taqm_2012,NYSE Millisecond Trades & Quotes 2012
+taqm_2013,NYSE Millisecond Trades & Quotes 2013
+taqm_2014,NYSE Millisecond Trades & Quotes 2014
+taqm_2015,NYSE Millisecond Trades & Quotes 2015
+taqm_2016,NYSE Millisecond Trades & Quotes 2016
+taqm_2017,NYSE Millisecond Trades & Quotes 2017
+taqm_2018,NYSE Millisecond Trades & Quotes 2018
+taqm_2019,NYSE Millisecond Trades & Quotes 2019
+taqm_2020,NYSE Millisecond Trades & Quotes 2020
+taqm_2021,NYSE Millisecond Trades & Quotes 2021
+taqm_2022,NYSE Millisecond Trades & Quotes 2022
+taqm_2023,NYSE Millisecond Trades & Quotes 2023
+taqm_2024,NYSE Millisecond Trades & Quotes 2024
+taqm_2025,NYSE Millisecond Trades & Quotes 2025
+taqm_2026,NYSE Millisecond Trades & Quotes 2026
+taqm_common,TAQ Daily internal product code
+tr_13f,Thomson Reuters Institutional Managers (13f) Holdings
+tr_13f_archive,"Archived snapshot of uncorrected, corrupted data in TR 13F Holdings"
+tr_dandb_dmi_us,D&B U.S. DMI
+tr_dandb_wb_af,D&B’s Global Archive/WorldBase Africa
+tr_dandb_wb_ap,D&B’s Global Archive/WorldBase Asia Pacific
+tr_dandb_wb_eu,D&B’s Global Archive/WorldBase Europe
+tr_dandb_wb_la,D&B’s Global Archive/WorldBase Latin America
+tr_dandb_wb_me,D&B’s Global Archive/WorldBase Middle East
+tr_dandb_wb_na,D&B’s Global Archive/WorldBase North America
+tr_dandb_wb_unknown,D&B’s Global Archive/WorldBase Unknown Country/Region
+tr_ds_comds,Datastream Commodities Data
+tr_ds_econ,Datastream Economics Data
+tr_ds_equities,Datastream Equities Data
+tr_ds_fut,Datastream Futures
+tr_esg,Refinitiv ESG Data
+tr_ibes,Thomson Reuters IBES Historical Estimates (Global)
+tr_ibes_guidance,Thomson Reuters IBES Guidance
+tr_ibes_iga,Thomson Reuters IBES Global Aggregates
+tr_ibeskpi,IBES Key Performance Indicators
+tr_insiders,Thomson Reuters Insiders Filing Data
+tr_mutualfunds,LSEG Mutual Funds Holdings
+tr_mutualfunds_archive,"Archived snapshot of uncorrected, corrupted data in TR Mutual Funds Holdings"
+tr_ownership,Thomson Reuters Global OP Ownership
+tr_sdc_joint_ventures,Thomson Reuters - SDC Joint Ventures
+tr_sdc_ma,Thomson Reuters - SDC M&A
+tr_sdc_municipals,Thomson Reuters - SDC Municipals
+tr_sdc_ni,Thomson Reuters - SDC New Issues
+tr_sdc_private_equity,Thomson Reuters - SDC Private Equity
+tr_tass,Thomson Reuters TASS / Lipper Hedge Fund Database
+tr_worldscope,Thomson Reuters - Worldscope
+trucost_carbon,Trucost Analytics: Carbon Earnings at Risk
+trucost_paris,Trucost Analytics: Paris Alignment
+trucost_risk,Trucost Analytics: Physical Risk
+twitter_samp,Twitter Sample
+twoiq_all,2iQ Global Insider Transaction Data
+wind_ashare,None
+wind_code,None
+windsmp,None
+wqa_all,WRDS Quant Alpha
+wrds_abs,Securitized Loans & Leases by WRDS - Form ABS
+wrds_backtest,"This holds the ""mother file"" for the Learning Lab Backtester classroom tool.Only the WRDS Subscriber should have a subscription to this, to power the Backtester classroom tool. It is a web-only product."
+wrds_environmental,WRDS Environmental
+wrds_finra_short_interest,WRDS Finra Short Interest
+wrds_genai_pilot,"Enables access to the Generative AI Pilot, and the features of that pilot."
+wrds_grocery,None
+wrds_insiders,WRDS Insiders
+wrds_internal,"Used to restrict access to WRDS users (or, possible Wharton users)"
+wrds_marketplace,WRDS Marketplace Vendor Access - used to give vendor accounts access to the Marketplace Vendor Portal
+wrds_mutualfund,WRDS Mutual Fund
+wrds_short_volume,WRDS Short Volume
+wrds_text_analytics,The WRDS Text Analytics platform.
+wrds_trade_exec_samp,Trade Execution by WRDS Sample
+wrds_trade_execution,Trade Execution by WRDS
+wrds_trading_suite,WRDS trading suite
+wrds_xbrl_fundamental,WRDS XBRL Fundamental
+wrdsapps_evtstudy_int_ciq,Event Study Intl using Compustat with Capital IQ
+wrdsapps_evtstudy_intraday,Event Study Intraday
+wrdsapps_evtstudy_intraday_rav,Event Study Intraday with Ravenpack
+wrdsapps_evtstudy_lr_ciq,Event Study Long Run with Capital IQ
+wrdsapps_evtstudy_us_ciq,WRDS Event Study US with Capital IQ
+wrdsapps_finratio_ibes,WRDS Financial Ratios with Ibes
+wrdsapps_finratio_ibes_ccm,WRDS Financial Ratios with Ibes and CCM
+wrdsapps_link_crsp_ibes,Linking Suite: Ibes - CRSP
+wrdsapps_link_crsp_taqm,Linking Suite: TAQ Daily - CRSP
+wrdsapps_link_datastream_wscope,WRDS Linking Datastream to Worldscope
+wrdsapps_link_dealscan_wscope,Linking Suite: Dealscan - Worldscope
+wrdsapps_link_trinsider_bdx,Linking Suite: Thomson Insiders - Boardex
+wrdsapps_plink_boardex_trinsider,None
+wrdsapps_plink_boardex_twoiq,None
+wrdsapps_plink_exec_trinsider,None
+wrdsapps_plink_exec_twoiq,None
+wrdsapps_plink_trinsider_ciq,None
+wrdsapps_plink_trinsider_twoiq,None
+wrdsapps_plink_twoiq_ciq,None
+wrdsrpts_vendor_usage,WRDS Vendor Usage Reports for consumption by WRDS Vendors
+wta_audit_audit_comp,WTA and Audit Analytics Revised Audit Opinions
+wta_ciq_keydev,WTA and CIQ Key Developments
+wta_ciq_transcripts,WRDS Text Analysis & Capital IQ Transcripts
+wta_ciqsamp_keydev,WTA and CIQ Sample Key Developments
+wta_ciqsamp_transcripts,WRDS Text Analysis & Capital IQ Sample Transcripts
+wta_gutenberg,WTA and Project Gutenberg
+wta_lexisnexis_metabase,LexisNexis on the WRDS Text Analytics platform.
+wta_twitter_samp,WTA and Twitter Sample
+wta_wrdssec_all,WRDS Text Analysis & WRDS SEC Platform.
+zacks_all,Zacks Investment Research

@@ -8,6 +8,18 @@ NULL
 
 # Global variables used in dplyr pipelines (NSE)
 utils::globalVariables(c(
-  "datadate", "datafmt", "gvkey", "linkenddt", "n", "popsrc", "score",
-  "sic", "sic_header", "sich"
+  "column_name",
+  "datadate",
+  "datafmt",
+  "gvkey",
+  "linkenddt",
+  "n",
+  "popsrc",
+  "product",
+  "schema",
+  "score",
+  "sic",
+  "sic_header",
+  "sich",
+  "wrds_products"
 ))

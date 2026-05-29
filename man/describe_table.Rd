@@ -21,14 +21,15 @@ Default is 20.}
 \value{
 Invisibly returns a list with components:
 \describe{
-\item{columns}{A data frame with \code{column_name} and \code{data_type}}
+\item{columns}{A data frame with \code{column_name}, \code{data_type}, and \code{label}}
+\item{description}{Table description, or \code{NA} if unavailable}
 \item{nrow}{Row count}
 \item{sample}{A data frame with sample rows (if \code{n > 0})}
 }
 }
 \description{
-Displays a glimpse-like summary of a WRDS table showing column names
-and types, similar to \code{\link[dplyr:glimpse]{dplyr::glimpse()}}.
+Displays a glimpse-like summary of a WRDS table showing column names,
+types, and human-readable labels, similar to \code{\link[dplyr:glimpse]{dplyr::glimpse()}}.
 }
 \examples{
 \dontrun{

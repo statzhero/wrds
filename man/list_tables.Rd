@@ -12,10 +12,11 @@ list_tables(wrds, library)
 \item{library}{Character. The name of the library (schema) to query.}
 }
 \value{
-A character vector of table names.
+A tibble with columns \code{table} and \code{description}.
 }
 \description{
-Returns a character vector of table names within a WRDS library (schema).
+Returns a tibble of table names within a WRDS library (schema), with
+human-readable descriptions where available.
 }
 \examples{
 \dontrun{

@@ -65,12 +65,14 @@
 #'
 #' wrds_disconnect(wrds)
 #' }
-get_table <- function(wrds,
-                      library,
-                      table,
-                      columns = NULL,
-                      n = Inf,
-                      lazy = TRUE) {
+get_table <- function(
+  wrds,
+  library,
+  table,
+  columns = NULL,
+  n = Inf,
+  lazy = TRUE
+) {
   if (!is.character(library) || length(library) != 1) {
     cli::cli_abort("{.arg library} must be a single character string.")
   }

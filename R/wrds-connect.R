@@ -27,9 +27,11 @@
 #' list_subscriptions(wrds)
 #' wrds_disconnect(wrds)
 #' }
-wrds_connect <- function(user_key = "wrds_user",
-                         password_key = "wrds_pw",
-                         keyring = NULL) {
+wrds_connect <- function(
+  user_key = "wrds_user",
+  password_key = "wrds_pw",
+  keyring = NULL
+) {
   user <- tryCatch(
     keyring::key_get(user_key, keyring = keyring),
     error = \(e) {
@@ -50,7 +52,6 @@ wrds_connect <- function(user_key = "wrds_user",
     }
   )
 
-
   tryCatch(
     DBI::dbConnect(
       RPostgres::Postgres(),
@@ -65,12 +66,15 @@ wrds_connect <- function(user_key = "wrds_user",
     error = \(e) {
       msg <- conditionMessage(e)
       if (grepl("PAM authentication failed", msg)) {
-        cli::cli_abort(c(
-          "WRDS authentication failed for user {.val {user}}.",
-          "i" = "Your password may be incorrect. Run {.fn wrds_update_password} to update it.",
-          "i" = "WRDS requires Two-Factor Authentication (Duo). If you have not yet enrolled, visit {.url https://wrds-www.wharton.upenn.edu} to complete enrollment.",
-          "i" = "You may also need to accept the Terms & Conditions by logging in at {.url https://wrds-www.wharton.upenn.edu}."
-        ), parent = e)
+        cli::cli_abort(
+          c(
+            "WRDS authentication failed for user {.val {user}}.",
+            "i" = "Your password may be incorrect. Run {.fn wrds_update_password} to update it.",
+            "i" = "WRDS requires Two-Factor Authentication (Duo). If you have not yet enrolled, visit {.url https://wrds-www.wharton.upenn.edu} to complete enrollment.",
+            "i" = "You may also need to accept the Terms & Conditions by logging in at {.url https://wrds-www.wharton.upenn.edu}."
+          ),
+          parent = e
+        )
       }
       cli::cli_abort(
         "Failed to connect to WRDS.",
@@ -122,9 +126,11 @@ wrds_disconnect <- function(wrds) {
 #' \dontrun{
 #' wrds_set_credentials()
 #' }
-wrds_set_credentials <- function(user_key = "wrds_user",
-                                 password_key = "wrds_pw",
-                                 keyring = NULL) {
+wrds_set_credentials <- function(
+  user_key = "wrds_user",
+  password_key = "wrds_pw",
+  keyring = NULL
+) {
   if (!interactive()) {
     cli::cli_abort("wrds_set_credentials() must be run interactively.")
   }
@@ -160,13 +166,16 @@ wrds_set_credentials <- function(user_key = "wrds_user",
 #' \dontrun{
 #' wrds_update_password()
 #' }
-wrds_update_password <- function(password_key = "wrds_pw",
-                                 keyring = NULL) {
+wrds_update_password <- function(password_key = "wrds_pw", keyring = NULL) {
   if (!interactive()) {
     cli::cli_abort("wrds_update_password() must be run interactively.")
   }
 
-  keyring::key_set(password_key, keyring = keyring, prompt = "New WRDS password: ")
+  keyring::key_set(
+    password_key,
+    keyring = keyring,
+    prompt = "New WRDS password: "
+  )
 
   cli::cli_alert_success("Password updated successfully.")
   invisible(TRUE)

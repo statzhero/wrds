@@ -91,18 +91,20 @@
 #'
 #' wrds_disconnect(wrds)
 #' }
-get_compustat <- function(wrds,
-                          frequency = c("annual", "quarterly"),
-                          region = c("na", "global"),
-                          start_date = NULL,
-                          end_date = NULL,
-                          columns = NULL,
-                          add_columns = NULL,
-                          indfmt = "INDL",
-                          consol = "C",
-                          fill_sic = FALSE,
-                          n = Inf,
-                          lazy = FALSE) {
+get_compustat <- function(
+  wrds,
+  frequency = c("annual", "quarterly"),
+  region = c("na", "global"),
+  start_date = NULL,
+  end_date = NULL,
+  columns = NULL,
+  add_columns = NULL,
+  indfmt = "INDL",
+  consol = "C",
+  fill_sic = FALSE,
+  n = Inf,
+  lazy = FALSE
+) {
   check_connection(wrds)
   frequency <- rlang::arg_match(frequency)
   region <- rlang::arg_match(region)
@@ -115,7 +117,6 @@ get_compustat <- function(wrds,
   }
 
   config <- compustat_config(frequency, region)
-
 
   tbl <- dplyr::tbl(wrds, DBI::Id(schema = "comp", table = config$table)) |>
     dplyr::filter(
@@ -194,15 +195,36 @@ compustat_config <- function(frequency, region) {
         datafmt = "STD",
         popsrc = "D",
         columns = c(
-          "gvkey", "cusip", "tic", "conm", "datadate", "fyear", "fyr",
-          "ni", "ib", "oiadp", "revt",
-          "at", "lt", "seq", "ceq",
-          "csho", "prcc_f",
-          "sale", "cogs", "xsga",
-          "capx", "xrd",
-          "che", "dlc", "dltt",
-          "re", "invt", "ppent",
-          "curcd", "sich"
+          "gvkey",
+          "cusip",
+          "tic",
+          "conm",
+          "datadate",
+          "fyear",
+          "fyr",
+          "ni",
+          "ib",
+          "oiadp",
+          "revt",
+          "at",
+          "lt",
+          "seq",
+          "ceq",
+          "csho",
+          "prcc_f",
+          "sale",
+          "cogs",
+          "xsga",
+          "capx",
+          "xrd",
+          "che",
+          "dlc",
+          "dltt",
+          "re",
+          "invt",
+          "ppent",
+          "curcd",
+          "sich"
         )
       )
     } else {
@@ -211,15 +233,39 @@ compustat_config <- function(frequency, region) {
         datafmt = "STD",
         popsrc = "D",
         columns = c(
-          "gvkey", "cusip", "tic", "conm", "datadate", "fyearq", "fqtr",
-          "niq", "ibq", "oiadpq", "revtq",
-          "atq", "ltq", "seqq", "ceqq",
-          "cshoq", "prccq", "mkvaltq",
-          "saleq", "cogsq", "xsgaq",
-          "capxy", "xrdq",
-          "cheq", "dlcq", "dlttq",
-          "req", "invtq", "ppentq",
-          "curcdq", "datacqtr", "datafqtr", "sich"
+          "gvkey",
+          "cusip",
+          "tic",
+          "conm",
+          "datadate",
+          "fyearq",
+          "fqtr",
+          "niq",
+          "ibq",
+          "oiadpq",
+          "revtq",
+          "atq",
+          "ltq",
+          "seqq",
+          "ceqq",
+          "cshoq",
+          "prccq",
+          "mkvaltq",
+          "saleq",
+          "cogsq",
+          "xsgaq",
+          "capxy",
+          "xrdq",
+          "cheq",
+          "dlcq",
+          "dlttq",
+          "req",
+          "invtq",
+          "ppentq",
+          "curcdq",
+          "datacqtr",
+          "datafqtr",
+          "sich"
         )
       )
     }
@@ -230,15 +276,34 @@ compustat_config <- function(frequency, region) {
         datafmt = "HIST_STD",
         popsrc = "I",
         columns = c(
-          "gvkey", "isin", "conm", "datadate", "fyear", "fyr",
-          "nit", "ib", "oiadp", "revt",
-          "at", "lt", "seq", "ceq",
-          "sale", "cogs", "xsga",
+          "gvkey",
+          "isin",
+          "conm",
+          "datadate",
+          "fyear",
+          "fyr",
+          "nit",
+          "ib",
+          "oiadp",
+          "revt",
+          "at",
+          "lt",
+          "seq",
+          "ceq",
+          "sale",
+          "cogs",
+          "xsga",
           "capx",
-          "che", "dlc", "dltt",
-          "rect", "invt", "ppent",
+          "che",
+          "dlc",
+          "dltt",
+          "rect",
+          "invt",
+          "ppent",
           "curcd",
-          "loc", "fic", "exchg"
+          "loc",
+          "fic",
+          "exchg"
         )
       )
     } else {
@@ -247,15 +312,36 @@ compustat_config <- function(frequency, region) {
         datafmt = "HIST_STD",
         popsrc = "I",
         columns = c(
-          "gvkey", "isin", "conm", "datadate", "fyearq", "fqtr",
-          "nitq", "ibq", "oiadpq", "revtq",
-          "atq", "ltq", "seqq", "ceqq",
-          "saleq", "cogsq", "xsgaq",
+          "gvkey",
+          "isin",
+          "conm",
+          "datadate",
+          "fyearq",
+          "fqtr",
+          "nitq",
+          "ibq",
+          "oiadpq",
+          "revtq",
+          "atq",
+          "ltq",
+          "seqq",
+          "ceqq",
+          "saleq",
+          "cogsq",
+          "xsgaq",
           "capxy",
-          "cheq", "dlcq", "dlttq",
-          "rectq", "invtq", "ppentq",
-          "curcdq", "datacqtr", "datafqtr",
-          "loc", "fic", "exchg"
+          "cheq",
+          "dlcq",
+          "dlttq",
+          "rectq",
+          "invtq",
+          "ppentq",
+          "curcdq",
+          "datacqtr",
+          "datafqtr",
+          "loc",
+          "fic",
+          "exchg"
         )
       )
     }
@@ -275,7 +361,10 @@ compustat_config <- function(frequency, region) {
 #'
 #' @keywords internal
 fill_sic_codes <- function(tbl, wrds) {
-  company_sic <- dplyr::tbl(wrds, DBI::Id(schema = "comp", table = "company")) |>
+  company_sic <- dplyr::tbl(
+    wrds,
+    DBI::Id(schema = "comp", table = "company")
+  ) |>
     dplyr::select(gvkey, sic_header = sic)
 
   tbl |>

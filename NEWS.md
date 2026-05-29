@@ -1,3 +1,9 @@
+# wrds (development version)
+
+* `describe_table()` now shows human-readable column labels and table descriptions from WRDS metadata.
+* `list_subscriptions()` now returns a tibble with `schema` and `product` columns instead of a character vector. Product names are mapped from the `wrds_products` dataset.
+* `list_tables()` now returns a tibble with `table` and `description` columns instead of a character vector. Descriptions come from WRDS metadata.
+
 # wrds 0.1.1
 
 * `list_subscriptions()` lists subscribed data products.

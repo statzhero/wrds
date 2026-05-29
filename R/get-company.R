@@ -52,11 +52,13 @@
 #'
 #' wrds_disconnect(wrds)
 #' }
-get_company <- function(wrds,
-                        region = c("na", "global"),
-                        columns = NULL,
-                        n = Inf,
-                        lazy = FALSE) {
+get_company <- function(
+  wrds,
+  region = c("na", "global"),
+  columns = NULL,
+  n = Inf,
+  lazy = FALSE
+) {
   check_connection(wrds)
   region <- rlang::arg_match(region)
 

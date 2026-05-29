@@ -10,10 +10,11 @@ list_subscriptions(wrds)
 \item{wrds}{A \code{DBIConnection} object returned by \code{\link[=wrds_connect]{wrds_connect()}}.}
 }
 \value{
-A character vector of schema names.
+A tibble with columns \code{schema} and \code{product}.
 }
 \description{
-Returns a character vector of WRDS schemas the user has access to.
+Returns a tibble of WRDS schemas the user has access to, with
+human-readable product names where available.
 }
 \examples{
 \dontrun{

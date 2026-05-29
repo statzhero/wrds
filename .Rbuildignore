@@ -14,3 +14,4 @@ _cache/
 ^plans$
 ^\.Rprofile$
 ^\.vscode$
+^data-raw$
